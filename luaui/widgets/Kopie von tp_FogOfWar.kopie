@@ -1,0 +1,117 @@
+
+--80 fps -> 10 fps. fail
+
+function widget:GetInfo()
+  return {
+    name      = "Fog of War",
+    desc      = "transparent fog underwear",
+    author    = "knorke",
+    date      = "Feb 2011, 2011",
+    license   = "weeeeeee iam on horse",
+    layer     = -3,
+    enabled   = false
+  }
+end
+
+local FogOfWar = {}
+local updateRate = 30 --update LOS every X frames
+local fogRes = 200		--a of each LOS square
+
+--local DrawGroundHuggingSquare = DrawGroundHuggingSquare
+--local DrawGroundHuggingSquareVertices = DrawGroundHuggingSquareVertices
+
+function widget:GameFrame (f)
+	--if (f%updateRate==0) then updateFogOfWar() end	
+end
+
+function widget:UnitCreated(unitID, unitDefID, teamID, builderID)	
+	duID = unitID
+end
+
+
+function widget:DrawWorld ()
+	for z = 1, Game.mapSizeZ, fogRes do
+		for x = 1,Game.mapSizeX, fogRes do
+		local r = math.random (1,100)/100
+			DrawGroundHuggingSquare(r,r,r,r, x-fogRes/2 , z-fogRes/2, x+fogRes/2 , z+fogRes/2,  200)			
+			gl.Color(1,0,0,0.5)
+			
+			
+			gl.PushAttrib(GL.ALL_ATTRIB_BITS)
+			gl.DepthTest(true)
+			gl.DepthMask(true)
+			gl.BeginEnd(GL.QUAD_STRIP, FOGfield, x,z)			
+			gl.Texture(false)
+			gl.PopAttrib()
+		end
+	end
+	--gl.Color(1,0,0,0.5)
+	--DrawGroundHuggingSquare(1,1,1,1,  0,0,200, 200,  200) --
+	gl.Color(1,0,0,0.5)
+	gl.Texture(false)
+	gl.DepthMask(false)
+	gl.DepthTest(false)	
+	gl.PopAttrib()	
+end
+
+function DrawGroundHuggingSquare(red,green,blue,alpha,  x1,z1,x2,z2,   HoverHeight)
+	gl.PushAttrib(GL.ALL_ATTRIB_BITS)
+	gl.DepthTest(true)
+	gl.DepthMask(true)	
+	--gl.Texture(":a:LuaRules\\widgets\\lava2.png")-- Texture file
+	--gl.Texture(":a:bitmaps\\default\\ocean.jpg")-- Texture file
+	gl.Color(red,green,blue,alpha)
+	--gl.Color(0,1,1,0.4)
+	gl.BeginEnd(GL.QUADS,DrawGroundHuggingSquareVertices,  x1,z1, x2,z2,  HoverHeight)
+	gl.Texture(false)
+	--gl.DepthMask(false)
+	--gl.DepthTest(false)
+	--gl.Color(1,1,1,1)
+	gl.PopAttrib()
+end
+
+function FOGfield (x,z)
+	gl.Vertex(x, 200,  z)
+	gl.Vertex(x+100, 200,  z+100)
+end
+
+function DrawGroundHuggingSquareVertices(x1,z1, x2,z2,   HoverHeight)
+  local y=HoverHeight--+Spring.GetGroundHeight(x,z)  
+  local s = 2--2+math.sin (SYNCED.frame/50)/10
+  --gl.TexCoord(-s,-s)
+  gl.Vertex(x1 ,y, z1)  
+	--gl.TexCoord(-s,s) 
+	gl.Vertex(x1,y,z2)  
+  --gl.TexCoord(s,s)
+  gl.Vertex(x2,y,z2)  
+	--gl.TexCoord(s,-s)
+  gl.Vertex(x2,y,z1)
+end
+
+function Draw3DSHAPE (x1,y1,z1, x2,y2,z2,  x3,y3,z3,  x4,y4,z4)
+  local s = 2--+math.sin (SYNCED.frame/50)/10
+  gl.TexCoord(-s,-s)
+  gl.Vertex(x1 ,y1, z1)
+  
+  gl.TexCoord(-s,s) 
+  gl.Vertex(x2,y2,z2)
+  
+  gl.TexCoord(s,s)
+  gl.Vertex(x3,y3,z3)
+  
+  gl.TexCoord(s,-s)
+  gl.Vertex(x4,y4,z4)
+end
+
+function Draw3DTriangle (point1, point2, point3)
+  local s = 2--+math.sin (SYNCED.frame/50)/10
+  gl.TexCoord(-s,-s)
+  gl.Vertex(point1.x ,point1.y, point1.z)
+  
+  gl.TexCoord(-s,s) 
+  gl.Vertex(point2.x ,point2.y, point2.z)
+  
+  gl.TexCoord(s,s)
+  gl.Vertex(point3.x ,point3.y, point3.z)
+end
+

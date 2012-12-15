@@ -1,0 +1,240 @@
+players:
+robburdon
+google frog
+pintle
+dnw
+af
+kingraptor
+kloot
+
+=> Brickcraft_epenis3nov11.sdz
+[01:13:15] <[PRO]Jools> ok, I like it. And it reminds me of dune too because I used to play it in german, to learn
+[01:13:36] <[PRO]Jools> took a while to understand how you  build harvesters
+[01:13:41] <[PRO]Jools> that's why i lost
+[01:14:05] <[PRO]Jools> and i dont know which units are good yet, i just assumed more expensive are better
+[01:14:14] <[PRO]Jools> keep the voices imo
+
+
+[01:13:02] <[AP]Fundamental> when you scroll out you can't see how many blocks are removed
+[01:13:07] <[AP]Fundamental> so health bars are needed
+[01:13:14] <[AP]Fundamental> otherwise you have to scroll in 
+<[AP]Fundamental>no radar?
+<[AP]Fundamental> how do units get hp back
+
+-> no srs games were played/playable.
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+
+=> Brickcraft_epenis2_3nov2011.sdz
+/changes\
+-removed message spam
+-"normal" healthbars
+
+
+----10 games vs: google frog
+most effective strategy found:
+do not make a 2nd harvester, it takes too long to pay back.
+just pump units from 3-4 barracks, 2x factories or similiar
+normal games never progress past barracks&factory
+
+ideas vs rushing, pro more teching:
+more building HP
+buildings with defense?
+harvester buildable by HQ?
+HQ with defense?
+make tech stuff cheaper
+
+HARVESTER IS NOT WORTH MAKING because payback takes too long:
+400->500 metal/trip for quicker payback
+lower sec build time miner
+1-2 mineralien nahe am HQ
+
+"helicopters do not fit" (?)
+
+tips:
+at gamestart mine in middle, harvesters are hard to kill and later you can safely mine the minerals in your corner
+
+
+adjustable start res
+bad cats on helicopter (?) ckeck if moving units dont fire at it
+
+a bunker for infantry?
+-+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+-
+/changes\
+balance:
+Heliport: cost 2000->800 (same as factory)
+Harvester: buildtime 50->25 sec, metal per trip: already was at 500, no change
+Barracks: hitpoints 750->1500
+Warp Coil: cost 2000->1000, hitpoints 1500->3000
+Adv. Factory: cost 2000->800, buildtime 40->30
+Upgrade "Jeep Speed": cost 1000->500
+Upgrade "double DPS gatling": cost 2000->1000
+Upgrade "electric chain damage": cost 2000->1000
+Turret Center: cost 2000->600
+Gun Turret: cost 500->300
+HeliDrone: hitpoints 20->200
+added custom formations widget
+
+time until miner pays back: 
+@ 500m/trip,800m fac + 2000 miner -> 6min10
+@ 500m/trip,800m fac + 1500 miner -> ~4min
+
+it was noted:
+helicopters kill anything
+gatlings with upgrade kill anything as well
+
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis4_6nov2011.sdz
+/changes\
+gating veh: damage 7->4  speed 2.5->2.3  upgrade: 1000->750
+hubschrauber: range 500->350  cruiseAlt 200->150
+jeep: can shot air
+dude:cylinderTargeting =1
+
+drones respawn (gadget by googlefrog, thx)
+---
+rocket dudes suck a bit:
+[09:34:55] <[LCC]GoogleFrog[0K]> 150 damage and proportionally higher reload?
+or
+[09:35:17] <[RoX]knorke> tracking but only vs vehicles
+
+[09:41:01] <[LCC]GoogleFrog[0K]> do one weapon
+[09:41:15] <[LCC]GoogleFrog[0K]> if it is shooting at inf don't fire the weapon, just emitsfx
+[09:41:26] <[LCC]GoogleFrog[0K]> emitsfx once the launcher is pointing in the right direction
+[09:41:32] <[LCC]GoogleFrog[0K]> it doesn't home
+[09:41:35] <[RoX]knorke> emitsfx weapons dont aim?
+[09:41:49] <[LCC]GoogleFrog[0K]> you emitsfx projectiles´
+->that did not work because emitsfx is teh suck -> 2 weapons blocking each other
+
+todo:
+fix hitboxes! (units can get near buildings where can not be shot)
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis6_8nov2011.sdz
+/changes\
+rocket dudes aim faster and their weapon now homes onto vehicles & aircraft. vs infantry it is unguided.
+Reflex tank is now a stealth tank
+
+------------
+MEGA BUG: decaying construction give epic metal?!
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis7_11nov2011.sdz  (was actually 13nov)
+/changes\
+iirc nothing balance related, only small fixes
+playing vs googlefrog it was noted: tankswarm is unstoppable, not even by rocket dudes.
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis8_13nov2011.sdz
+/changes\
+tank: hp 800->860 , dmg 30->40, reload 1->1.5, no AOE, range 600->400, cost 300->350, sight 350
+rocket infantry: 75->80hp, los 300->350
+it was noted:
+vs pintle: gatling veh ->maybe<- too strong?
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis9_17nov2011.sdz
+/changes\
+new wip unit: dropship
+
+it was noted:
+gatling is OP with upgrade (esp rushing)
+
+[05:47:21] <[LCC]GoogleFrog[0K]> more tank range
+
+[05:57:21] <[RoX]knorke> or maybe the factory could also have a different animation when researching
+[05:57:27] <[RoX]knorke> eg black instead of white smoke
+[05:57:27] <[LCC]GoogleFrog[0K]> how about you make it require coil but still occur in the factory?
+[05:57:33] <[LCC]GoogleFrog[0K]> a different animation is also good
+
+
+[07:49:20] <[LCC]GoogleFrog[0K]> I think you could double tank damage
+
+tank range->500, damage->75
+[07:54:37] <[LCC]GoogleFrog[0K]> if tank is too good vs inf the simple fix is increased reload time
+
+
+move gat upgrade to coil
+
+[08:18:53] <[LCC]GoogleFrog[0K]> and make 4k start with 1.5k harvester the default?
+
+[08:24:09] <[LCC]GoogleFrog[0K]> oh also spawn harvester facing inwards, or make it configurable in map conditions
+[08:24:23] <[LCC]GoogleFrog[0K]> and it should face away from the cube
+
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis10_17nov2011.sdz
+/changes\
+tank: dmg->75, range->500
+miner cost=1500
+startres=4000
+
+
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+hooray spring 84.0!
+=> Brickcraft_epenis11_28nov2011.sdz
+/changes\
+heli: health 500->750
+eco: minerals are "ghosted" - no more cheating by looking at hp bars, each trip gives excactly 500, unfucked miner AI
+gatveh: buildtime 20->30, loses guns when damaged (at 75%,50%,25%),  upgrade only applies to newly built units
+jeep: upgrade only applies to newly built units
+drones die when turretcenter is destroyed
+
+[18:09:40] <[RoX]John> na bis auf das aussehen ist es ganz gut
+[18:10:06] <[RoX]John> die sprüche sind auch lol
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis12_29nov2011.sdz
+/changes\
+make heliport buildable (wops)
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis13_11Dec2011.sdz
+/changes\
+mineral los system by googlefrog: what you see is not what you get
+some small fixes
+superpixelshader!
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis14_21Dec2011.sdz
+/changes\
+2nd resource: sirup
+-get sirup by capturing sirup pumps
+-"segway" vehicle can capture sirup pumps. moved to normal factory, removed time bombs
+tank weapon TrajectoryHeight 0.5->0.65 to ease shooting over walls/cliffs
+new unit: wall - buildable by hq & pioneer vehicle. 2000hp, costs 25m
+warpcoil: cost 1000->500 & costs 1000 sirup
+all upgrades: sirup cost = metal cost
+no other units cost sirup
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis15_4jan2012.sdz
+spring 85.0 is here!
+/changes\
+pumps are not reclaimable
+sound for chat, map marker
+pumps added to heartbreake, eyeofhorus, desertcliffs, tw_1
+fixed minerals kamikaze=true crash bug
+
+\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+=> Brickcraft_epenis16_1Jan2012.sdz
+walls cost 25 -> 15
+new building: Companion Cube: basically a smaller version of the HQ, buildable by pioneer
+dropship can now transport 1 vehicle (or 9 dudes as before)
+vehicles can run over infantry
+----
+it was noted:
+minerals maybe run out too quickly with 4 players
+
+not fixed:
+make walls not count as alive units
+
+***********
+

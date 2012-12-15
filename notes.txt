@@ -1,0 +1,120 @@
+groundscars gibts scheinbar nur für sachen mit default damage
+emp scheinbar auch
+
+tanks weniger losrange
+
+scorpion:
+poison (damage over time)
+or freezer (weapon works, movement gets stopped)
+
+[21:07:34] <zwzsg[IRC]> I wish there were more RTS with dune's laser-shield interaction.
+
+
+
+[10:25:07] <[LCC]GoogleFrog[0K]> do your units have christmas hats?
+[10:25:15] <[LCC]GoogleFrog[0K]> local currentTime = os.date('*t')
+[10:25:16] <[LCC]GoogleFrog[0K]> if (currentTime.month==12) then
+[10:25:16] <[LCC]GoogleFrog[0K]>   for i,f in pairs(effectUnitDefsXmas) do
+[10:25:16] <[LCC]GoogleFrog[0K]>     AddFX(i,f)
+[10:25:16] <[LCC]GoogleFrog[0K]>   end
+[10:25:16] <[LCC]GoogleFrog[0K]> end
+
+
+
+flares fürs dropship? als upgrade?
+upgrade "safe loading": damit werden geladene einheiten beim absturz nicht zerstört
+
+2nd res nur für repair und upgrades?
+
+
+Eco:
+2 Resourcen: A und B
+Gebäude kosten 25 A und viel mehr B
+Einheiten kosten nur B
+Minerals ernten gibt 50%Minerals+50%Öl
+Öltürme produzieren B  (je länger man sie kontrolliert umso mehr?)
+
+
+
+Schleicher:
+gräbt sich ein mit einfach Move (base, y_axis, -50,10)
+für die Stachel kann man pieces durch den Boden clippen lassen und oben drauf weapons mit AOE emitten
+
+ein hovercraft das sich NUR AUF LAND deployen kann (artiellery oder so)
+
+---------
+Kaserne:
+Dude
+Heavy Dude
+
+Fabrik:
+Jeep
+Vierling
+Tank
+Big Dipper
+
+Heliport:
+Hubschrauber
+Drop Ship
+
+Turret Center:
+Gun Turret + Heli Drone
+
+
+Super Factory:
+Heavy Tank
+Big Wheel
+
+
+Hafen:
+Paddler
+
+Super Slap Chop
+
+
+?
+Launch Box
+Scorpion
+---------
+
+Converter Schiff:
+-ist ein Dropoff
+-um auf einer Insel zu minen muss man es an der Küste deployen
+-und einen Harvester rüberfliegen
+->man kann es nicht so nah an die Minerals deployen weil die etwas entfernt von der Küste sind -> ist nicht so lame
+
+
+
+http://answers.springlobby.info/questions/400/how-exactly-does-crush-strength-unit-mass-and-feature-mass-all-interact
+
+feature crushing
+meine trees kriegen mass=50
+
+vehicles die bäume umwerfen kriegen crushStrength=100
+dudes kriegen crushStrength=25
+
+----GAMEPLAY ideen----
+"Overcharge" für Tesla Panzer(bigwheel) -> macht mehr Schaden aber geht dabei kaputt
+
+beim Teleporten: beim verschwinden alle pieces in random directions moven, beim erscheinen wieder zurück
+
+upgrade für Dudes: Moonwalk!
+(kann dann rückwärts laufen mit reverseSpeed)
+
+dudes können schwimmen (aber nicht im wasser schiessen)
+
+
+-------grafik ideen------
+die smoketrue=true, texture unsichtbar machen -> schatten für missile trails mit custom CEGs
+
+-------strings ausführen---------
+function arschfick (geld)
+	Spring.Echo ("arschficken koset " .. geld .. " mark")
+end
+
+function gadget:Initialize()
+	geld = 10
+	f = assert (loadstring ("arschfick(" .. geld .. ")"))
+	f ()
+end
+---------------------------------------

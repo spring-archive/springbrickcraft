@@ -1,0 +1,36 @@
+AIR
+alles was fliegt
+
+LAND
+alles was auf dem boden rumfährt/läuft
+
+SUBSEA
+alles was getaucht ist
+
+BIO
+infantry
+
+VEHICLE
+alles was mechanisch ist aber NICHT FLIEGT (schiffe, autos, panzer,...)
+
+BUILDING
+gebäude
+
+MINERALIEN
+zum absammeln
+
+IGNORE
+all units should have this in noChaseCategory
+used eg by mineral los fakeunits
+
+
+
+
+
+crushable features such as trees have  mass=50
+
+mass of infantry is mass=24
+mass of all vehicles is mass=200
+
+crushable walls have mass=250
+mass of vehicles that can crush walls is 225

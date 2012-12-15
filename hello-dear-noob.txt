@@ -1,0 +1,39 @@
+hello dear noob:
+The big cube builds buildings.
+The unit that stands in front of it is a harvester. it mines minerals and returns them to the cube for money. minerals = the blue stuff.
+
+= SOUNDS SUCK and are wip.  press F6 or springsettings.exe->unit reply volume=0
+
+There is no way to heal units yet.
+
+What units will not disappoint?
+The Dudes from the Barracks
+Tank, Vierling in Factory
+
+sirup is used for teching & upgrading
+capture pumps with the "Otis" vehicle from the factory
+
+buildicons with yellow background are upgrades.
+do not build unless you really want them.
+
+hotkey to send harvester to mine: m
+
+canceled buildings can not be resumed but time out (and you get resources back)
+(its easy to accidently cancel buildings before they are finished so watch out)
+
+to expand, build a PIONEER from the factory
+
+somewhat good first-try BUILD ORDER:
+1) Barracks 2) Factory 3) Make 1 or 2 extra MINERS from the factory 4) build units as needed
+
+
+AUrelaySlave
+
+
+
+
+
+
+
+
+hotkey to plant bombs with the segway: b (removed)

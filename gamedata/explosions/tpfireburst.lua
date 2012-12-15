@@ -1,0 +1,37 @@
+--spraying lots of fire and sparks from a gun barrel
+return {
+  ["tpfireburst"] = {
+    smoke = {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      useairlos          = true,
+      water              = true,
+      alwaysVisible = 0,
+	  properties = {
+        alwaysVisible = 0,
+        --explosiongenerator = [[custom:tpfireburst]],
+	  airdrag            = 1,
+        colormap           = [[1 1 1 1  1 1 1 0]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 5,
+        emitvector         = "dir",
+        gravity            = [[0, 0 , 0]],
+        numparticles       = 1,
+        particlelife       = 5,
+        particlelifespread = 5,
+        particlesize       = -15,
+        particlesizespread = 1,
+        particlespeed      = 0,
+        particlespeedspread = 5,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = 1,
+        sizemod            = 1.0,
+        texture            = [[sparktrail]],
+      },
+    },
+  },
+}

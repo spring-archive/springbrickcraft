@@ -1,0 +1,5 @@
+Spring.Echo ("unitdefs_post.lua FROM GAME!")
+
+for name, ud in pairs(UnitDefs) do
+	ud.showNanoFrame = false
+end

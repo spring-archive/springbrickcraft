@@ -1,0 +1,195 @@
+--es gibt dann zb eine unit tptech_wheels die dann bei UnitFinished techs[teamID].wheels = true triggered
+--funktionen die es braucht: LockInAll  UnlockInAll
+--[[
+Fabrik benötigt Kaserne
+ Turretcenter benötigt Fabrik
+ Helipad benötigt Fabrik
+ Helipad spawnt Helidronen die zwischen Turretcenter und Turrets patrollen
+ 
+ Einheiten
+ Fabrik kann immer bauen: Jeep, Tank, JeepSpeedUpgrade
+ Schwerer Panzer benötigt Turretcenter
+ Launchbox benötigt ??
+ 
+ 
+
+--]]
+
+
+function gadget:GetInfo()
+        return {
+                name                    = "Techer",
+                desc                    = "tec2nuk",
+                author          = "knorke",
+                date                    = "Dec 2010",
+                license  = "GNU GPL, v2 or later horses",
+                layer            = 0,
+                enabled  = false, --      loaded by default?
+        }
+end
+if (gadgetHandler:IsSyncedCode()) then
+--[[
+local techtree = {}
+local newtech = {}
+--speed upgrade for jeep--
+newtech.triggerunit = "tpupgradewheels"
+newtech.effectedunit ="tpjeep"
+newtech.techname = "wheels"
+techtree[newtech.triggerunit] = newtech
+--quad cannon for gatling
+newtech.triggerunit = "tpupgradequadcannon"
+newtech.effectedunit ="tpvierling"
+newtech.techname = "quadcannon"
+techtree[newtech.triggerunit] = newtech
+
+local techs = {}
+local teams = Spring.GetTeamList ()
+--***das geht besser
+for i in pairs(teams) do
+	techs["wheels"] = {}				--runde räder für jeep
+	techs["wheels"][teams[i]] = false
+	techs["tanks"] = {}					--panzer bauen
+	techs["tanks"][teams[i]] = false
+	techs["quadcannon"] = {}			--quad cannon für gatling
+	techs["quadcannon"][teams[i]] = false
+	Spring.Echo ("***tech team" .. teams[i])
+end
+
+--einen tech freischalten
+function enable_tech (teamID, techname)
+	if (not techs[techname]) then techs[techname] = {} end
+	--if (not techs[techname][teamID]) then techs[techname][teamID] = {} end
+	techs[techname][teamID] = true
+	--techs[teamID].techname = true
+	GG.techs = techs	
+end
+
+function check_team_tech (teamID, techname)
+	if ( techs[techname] and techs[techname][teamID]) then
+		return techs[techname][teamID]
+	else
+		return false
+	end
+end
+
+--thx quantum
+--table.insert(alwaysDisableTable, {UnitDefNames["corwin"].id, "Unit disabled: Wind is too weak on this map.",})
+local function DisableBuildButtons(unitID, disableTable)
+        for _, disable in ipairs(disableTable) do
+                local cmdDescID = Spring.FindUnitCmdDesc(unitID, -disable[1])
+                if (cmdDescID) then
+					local cmdArray = {disabled = true, tooltip = disable[2]}
+					Spring.EditUnitCmdDesc(unitID, cmdDescID, cmdArray)
+                end
+        end
+end
+
+
+local function EnableBuildButtons(unitID, disableTable)
+        for _, disable in ipairs(disableTable) do
+                local cmdDescID = Spring.FindUnitCmdDesc(unitID, -disable[1])
+                if (cmdDescID) then
+					local cmdArray = {disabled = false, tooltip = disable[2]}
+					Spring.EditUnitCmdDesc(unitID, cmdDescID, cmdArray)
+                end
+        end
+end
+
+--zB  (1, "tpfactory2", "tpupgradewheels", false, "this upgrade has already been bought")
+function UpdateBuildersOptions (teamID, builder, buildunit, enable, text)
+	local all_units = Spring.GetTeamUnitsByDefs (teamID, UnitDefNames[buildunit].id)
+	for i in pairs(all_units) do
+		--local unitDefID = Spring.GetUnitDefID(all_units[i])
+		--local unitDef = UnitDefs[Spring.GetUnitDefID(all_units[i])]
+		--if (unitDef) then
+			--if (unitDef.name == builder) then
+				local LUnit = {}
+				--table.insert(LUnit, {UnitDefNames[buildunit].id,text,})
+				table.insert(LUnit, {UnitDefNames[buildunit].id,})
+				if (enable==true) then
+					EnableBuildButtons (all_units[i], LUnit)
+				else
+					DisableBuildButtons (all_units[i], LUnit)
+				end
+			--end
+		--end
+	end
+end
+
+--die upgrade funktion von neu gespawnten unites aufrufen, wenn der tech da ist
+--***schleife!
+function gadget:UnitFinished(unitID, unitDefID, teamID)
+	local unitDef = UnitDefs[Spring.GetUnitDefID(unitID)]
+----jeep round wheels----
+	if (unitDef.name == "tpjeep") then 
+		--Spring.Echo ("hi jeep")
+		if ( check_team_tech (teamID, "wheels") ) then
+			--Spring.Echo ("neuer jeep, neue räder!")
+			env = Spring.UnitScript.GetScriptEnv(unitID)
+			if (env) then Spring.UnitScript.CallAsUnit(unitID, env.upgradewheels) end
+		end
+	end
+----factories can make tanks
+	if (unitDef.name== "tpfactory2") then
+		--Spring.Echo ("hey! new Factory!")
+		if (check_team_tech (unitTeam, "tanks") ~= true) then
+			UpdateBuildersOptions (teamID, "tpfactory2", "tptank", false, "you can not make tanks yet")
+			else
+			UpdateBuildersOptions (teamID, "tpfactory2", "tptank", true, "Blocker Tank")
+		end	
+	end
+----gatling gets quadcannon
+	if (unitDef.name == "tpvierling") then 
+		--Spring.Echo ("techer: hi gatling")
+		if ( check_team_tech (teamID, "quadcannon") ) then
+			--Spring.Echo ("jetzt wird 4-fach geballert!")
+			env = Spring.UnitScript.GetScriptEnv(unitID)
+			if (env) then Spring.UnitScript.CallAsUnit(unitID, env.upgradegun) end
+		end
+	end	
+end
+
+function gadget:UnitFromFactory(unitID, unitDefID, unitTeam, factID, factDefID, userOrders)
+	--schleife!***
+	local unitDef = UnitDefs[Spring.GetUnitDefID(unitID)]
+	if (unitDef.name == "tpupgradewheels") then
+		Spring.Echo ("Upgrade abgeschlossen: Wheeeeeels!")
+		enable_tech (unitTeam, "wheels")
+		UpdateBuildersOptions (unitTeam, "tpfactory2", "tpupgradewheels", false, "this upgrade has already been bought")
+		roundWheelsForExistingJeeps (unitTeam)
+	end
+	if (unitDef.name == "tpdude") then
+		Spring.Echo ("ab jetzt gibts panzer")
+		enable_tech (unitTeam, "tanks")
+		UpdateBuildersOptions (unitTeam, "tpfactory2", "tptank", true, "now go make some tanks")
+	end
+	if (unitDef.name == "tpupgradequadcannon") then
+		Spring.Echo ("Upgrade abgeschlossen: Quad Cannon")
+		enable_tech (unitTeam, "quadcannon")
+		UpdateBuildersOptions (unitTeam, "tpfactory2", "tpupgradequadcannon", false, "this upgrade has already been bought")
+	end
+end
+
+
+function roundWheelsForExistingJeeps (teamID)
+	for _,unitID in ipairs(Spring.GetTeamUnitsByDefs(teamID,UnitDefNames["tpjeep"].id)) do
+		env = Spring.UnitScript.GetScriptEnv(unitID)
+		if (env) then Spring.UnitScript.CallAsUnit(unitID, env.upgradewheels) end
+	end
+end
+
+
+
+function unitName (unitID)
+	if (not Spring.ValidUnitID (unitID)) then return "!invalid unitID in unitName()!" end
+	local udID =Spring.GetUnitDefID(unitID)
+	local uDef = UnitDefs [udID]
+	return uDef.name
+end
+--]]
+function gadget:Initialize()
+	Spring.Echo ("techer here")
+	local test = 
+end
+
+end

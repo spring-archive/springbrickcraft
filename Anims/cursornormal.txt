@@ -1,0 +1,12 @@
+hotspot topleft
+frame  anims/bw0.PNG  0.05
+frame  anims/bw1.PNG  0.05
+frame  anims/bw2.PNG  0.05
+frame  anims/bw3.PNG  0.05
+frame  anims/bw4.PNG  0.05
+frame  anims/bw5.PNG  0.05
+frame  anims/bw10.PNG  0.05
+frame  anims/bw9.PNG  0.05
+frame  anims/bw8.PNG  0.05
+frame  anims/bw7.PNG  0.05
+frame  anims/bw6.PNG  0.05

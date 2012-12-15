@@ -1,0 +1,30 @@
+local featureDef  =  {
+   name           = "f_tptribush",
+   blocking       = false,
+   --HITBOX--
+   --collisionVolumeTest       =  1,
+   --collisionVolumeOffsets    =  [[0 30 0]],
+   --collisionVolumeType       =  [[sphere]],
+   --collisionVolumeScales     = [[5]],  -- [[20 30 20]],
+   category       = "Tree",
+   maxdamage            = 1,
+   hideDamage = true,
+   damage            = 1,
+   indestructible = true,
+   --maxhealth            = 1,
+   mass				= 50,
+   description       = "Bush, Grass; you name it, it grows there",
+   energy            = 1,
+--   featuredead       = "doesthistreeturnintoanotherfeaturewhenitdies?ifsonamethenewfeaturehere",  
+   flammable         = 1,
+   footprintX        = 1,
+   footprintZ        = 1,
+   upright           = false,
+   height            = 15,
+   object            = "tribush.s3o", --tree.s3o
+   --drawType = -1,
+   reclaimable       = false,
+   autoreclaimable      = false,  
+   world          = "All Worlds",
+}
+return lowerkeys({[featureDef.name] = featureDef})

@@ -1,0 +1,12 @@
+into battle v3
+	hinten ist ein kleiner hügel, da können resourcen drauf
+	8x8
+	genug platz für basis
+	fuck of war sieht ok aus
+
+Heartbreaker
+Pathway
+Barren
+Finns_Revenge.sd7
+omniside.sd7 - rampen dicht machen, kein bauen auf bergen
+Evolution_in_War.sd7 - naja, berge evtl besser absperren

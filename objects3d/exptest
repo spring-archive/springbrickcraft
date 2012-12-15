@@ -1,0 +1,133 @@
+Object base
+ Current Pos:0.000, 0.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object Hips
+ Current Pos:0.000, 59.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object Chest
+ Current Pos:0.000, 39.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftUpLeg
+ Current Pos:13.000, -39.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftLowLeg
+ Current Pos:1.000, -22.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftFoot
+ Current Pos:-2.000, -26.000, 2.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightUpLeg
+ Current Pos:-12.000, -37.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightLowLeg
+ Current Pos:-2.000, -25.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightFoot
+ Current Pos:4.000, -23.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object Neck
+ Current Pos:0.000, 59.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object Head
+ Current Pos:0.000, 3.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftCollar
+ Current Pos:-16.000, -5.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftUpArm
+ Current Pos:-13.000, 0.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftLowArm
+ Current Pos:-4.000, -30.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object LeftHand
+ Current Pos:2.000, -22.000, -4.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightCollar
+ Current Pos:23.000, -5.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightUpArm
+ Current Pos:11.000, 0.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightLowArm
+ Current Pos:2.000, -30.000, 0.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys
+Object RightHand
+ Current Pos:0.000, -21.000, -3.000
+ Current Rotation:-0.000, -0.000, 0.000
+ Current Scale:1.000, 1.000, 1.000
+ AnimProperty position with 0 keys
+ AnimProperty rotation with 0 keys
+ AnimProperty scale with 0 keys

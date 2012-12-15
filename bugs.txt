@@ -1,0 +1,33 @@
+-MINERALS with 10 hp left are invisible!
+
+-resuming buildings bug - fixed in 84.0, still a bit gay: baut er auch mal was zu ende?
+
+-multiple research bug - fixed
+
+-possible to get infantry near buildings where they can not be attacked - maybe fixed
+
+-make drones die - fixed
+
+-miners _really_ want to mine - fixed
+
+-minerals los - fixed by googlefrog
+
+
+-(esp gatling) vehicles exiting factory teamkill it
+
+-gatling veh does not lose guns correctly - fixed (not tested much..)
+
+-minerals do not lose pieces as spec/in replays
+
+-units get unloaded in "random" order: in the dropship, passengers can get loaded onto the same seat after partial unload
+
+mining lua errors UnitIdle recursive bla
+
+turrets & drones too strong when porcing
+->players did not know about missile box and that tanks outrange turrets
+
+not enough minerals for 4 players
+
+helis selfkill in swarms - fixed
+
+startpositions in 2v2 fail

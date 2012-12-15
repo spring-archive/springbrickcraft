@@ -1,0 +1,1 @@
+Spring.Echo ("movedefs_post.lua from GAME!")

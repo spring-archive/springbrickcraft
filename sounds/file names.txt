@@ -1,0 +1,3 @@
+wep_xxx  waffen sound
+exp_xxx explosion
+all else: unit voices

@@ -1,0 +1,35 @@
+--laser
+local weaponName = "laser"
+local weaponDef = {
+	name                    = "Laser",
+	--areaOfEffect            = 8,
+	avoidFriendly           = 0,
+	beamTime                = 5,
+	craterMult              = 0,
+	accuracy                = 0,
+	collideFriendly         = false,
+	energypershot           = 0,
+	--sweepFire				= true,
+	damage                  = {
+		Normal = 45,
+	},
+	--explosionGenerator      = [[custom:resmining]],	
+	lineOfSight             = true,
+	range                   = 500,
+	reloadtime              = 1.5,
+	rgbColor                = [[1 0 0]],
+	separation              = 2,
+	thickness               = 4,
+	minIntensity            = 1,
+	size                    = 4,
+	--soundStart              = [[tp/swoosh]],
+	--soundStartVolume        = 0.5,
+	--soundTrigger            = true,	
+	--targetBorder            = 1,
+	tolerance               = 8000,
+	turret                  = true,
+	weaponType              = [[BeamLaser]],
+	weaponVelocity          = 2500,
+	targetBorder = true,
+}
+return lowerkeys({[weaponName] = weaponDef})

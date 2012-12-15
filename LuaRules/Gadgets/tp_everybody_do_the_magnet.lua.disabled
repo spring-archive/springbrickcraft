@@ -1,0 +1,37 @@
+function gadget:GetInfo()
+        return {
+                name                    = "everybody magnet",
+                desc                    = "fucking how",
+                author          = "knorke",
+                date                    = "2011",
+                license  = "magnetic horses",
+                layer            = 0,
+                enabled  = true, --      loaded by default?
+        }
+end
+
+
+function gadget:GameFrame (f)
+	if (f%30~=0) then return end
+	local all_units = Spring.GetAllUnits ()
+	for i in pairs(all_units) do
+		unitID = all_units[i]
+		env = Spring.UnitScript.GetScriptEnv(unitID)
+		--if (env) then Spring.UnitScript.CallAsUnit(unitID, env.script.StartMoving) end			
+		local x,y,z = Spring.GetUnitPosition (unitID)
+		if (x and y and z) then
+			nearunits=Spring.GetUnitsInSphere  (x,y,z, 150) or "nothing"
+			if (nearunits~="nothing") then		
+				for _, nearunitid in ipairs (nearunits) do
+					if (nearunitid~=unitID) then
+					passengerID = nearunitid
+					attachpiece = math.random (1, #Spring.GetUnitPieceList(unitID))
+					if (env) then Spring.UnitScript.CallAsUnit(unitID, Spring.UnitScript.AttachUnit, attachpiece, passengerID) end	
+					end
+				end
+			end
+		end
+		--UnitScript.AttachUnit (attachpiece, passengerID)
+		
+	end
+end

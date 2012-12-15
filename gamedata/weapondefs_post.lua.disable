@@ -1,0 +1,20 @@
+--
+Spring.Echo ("---weapondefs_post start---")
+ for _, weaponDef in pairs(WeaponDefs) do
+    --if (not weaponDef.damage.NoMineDamage) then
+		--weaponDef.damage.NoMineDamage = weaponDef.damage.Normal
+	--end
+	Spring.Echo (weaponDef.name)
+ end
+ 
+ for n,ud in pairs(UnitDefs) do
+	 Spring.Echo (ud.name)
+	 for UnitWeaponNum,UnitWeaponTable in pairs(ud.weapons) do				
+		Spring.Echo (weaponDef.name)
+		--for key,weaponDef in pairs(UnitWeaponTable) do
+			
+		--end
+	end 
+ end
+ 
+Spring.Echo ("---weapondefs_post end---")

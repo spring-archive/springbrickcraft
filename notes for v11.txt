@@ -1,0 +1,49 @@
+[04:39:52] <[LCC]GoogleFrog[0K]> could you make a wall building vehicle that can initially move around, then you can morph it into wall-layer
+[04:40:00] <[LCC]GoogleFrog[0K]> which moves slowly and leaves wall behind it
+[04:40:05] <[LCC]GoogleFrog[0K]> and dies after a while
+[04:40:09] <[RoX]knorke> like tron?
+[04:40:15] <[LCC]GoogleFrog[0K]> exactly like tron
+[04:40:34] <[RoX]knorke> that would be fun if it works out
+
+[04:41:23] <[LCC]GoogleFrog[0K]> unit moves, leaves smoke, remember smoke position
+[04:41:44] <[LCC]GoogleFrog[0K]> when the unit runs out turn the positions into walls, snapping to buildingmap
+[04:41:49] <[RoX]knorke> well the bombtruck is somewhat similiar if you give it unlimited bombs and hold down "b" while it moves
+[04:41:52] <[LCC]GoogleFrog[0K]> a gaia owned wall structuve
+
+
+[04:47:51] <[RoX]knorke> could also "shot" the wall
+[04:47:02] <[RoX]knorke> pick a direction and the wall grows in that direction for some length
+[04:47:02] <[LCC]GoogleFrog[0K]> what?
+[04:47:07] <[LCC]GoogleFrog[0K]> that's good too
+
+[04:57:54] <[LCC]GoogleFrog[0K]> with straight line wall deploy you could rotate it so it has a smooth edge
+
+
+[04:17:25] <[LCC]GoogleFrog[0K]> the harvester controls
+[04:17:33] <[LCC]GoogleFrog[0K]> you cannot tell them to move
+
+[05:48:22] <[LCC]GoogleFrog[0K]> can you make minerals invisible?
+[05:48:36] <[LCC]GoogleFrog[0K]> and reveal them at the start of the game so they ghost
+
+[03:04:07] <[LCC]GoogleFrog[0K]> at worst you could make an invisible thing that you can always see, attack commands on it are transfered to minerals
+
+
+
+gatling upgrade:
+make extra barrels fall off on damage (only the upgraded ones, at 75% and 50%)
+[06:14:54] <[RoX]knorke> would be possible to make it lose the extra barrels on damage
+[06:15:00] <[LCC]GoogleFrog[0K]> yea that may work
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+[07:24:26] <[LCC]GoogleFrog[0K]> so I'd like to see gattling fix, tech applying to new units, harvester controllability, wall maker, unselectable rocket dude and heli buff (hp is probably ok)
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+buildtime gat 30sec
+
+
+pass commands from transporters to passengers
+
+miner fahren so kacke weil das ziel blockiert bei der rückkehr?
+
+vierling damages the factory when it leaves and is shooting from inside :/

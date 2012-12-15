@@ -1,0 +1,177 @@
+	unitDef = {
+	  unitname            = [[tptank]],
+	  name                = [[Blocker]],
+	  description         = [[Bam, total devastation.]],
+	  acceleration        = 0.04,
+	  bmcode              = [[1]],
+	  brakeRate           = 0.02,
+	  buildCostEnergy     = 0,
+	  buildCostMetal      = 300,
+	  builder             = false,
+	  buildPic            = [[tptankblue.png]],
+	  buildTime           = 20,
+	  canAttack           = true,
+	  canGuard            = true,
+	  canMove             = true,
+	  canPatrol           = true,
+	  canstop             = [[1]],
+	  category            = [[LAND]],
+	  corpse              = [[DEAD]],
+      reclaimable         = false,
+	  --HITBOX--
+	  --collisionVolumeTest       =  1,	
+	  --collisionVolumeOffsets    =  [[0 0 0]],
+	  --collisionVolumeType       =  [[box]],
+	  --collisionVolumeScales     =  [[55 65 55]],
+	  ----------
+	  defaultmissiontype  = [[Standby]],
+--	  explodeAs           = [[MEDIUM_UNIT]],
+      footprintx          = 4,
+	  footprintZ          = 4,
+	  idleAutoHeal        = 0,
+	  leaveTracks         = true,
+	  trackOffset         = 3,
+	  trackStrength       = 6,
+	  trackStretch        = 1,
+	  trackType           = [[StdTank]],
+	  trackWidth          = 50,
+	  maneuverleashlength = [[640]],
+	  mass                = 90,
+	  maxDamage           = 1000,
+      maxSlope            = 18,
+	  maxVelocity         = 2.5,
+          maxWaterDepth       = 22,
+	  minCloakDistance    = 75,
+	  movementClass       = [[LightTANK]],
+	  moveState           = 0,
+	  noAutoFire          = false,
+	  noChaseCategory     = [[MINERALS FIXEDWING GUNSHIP SUB]],
+	  objectName          = [[cubetank.s3o]],
+	  seismicSignature    = 4,
+	  selfDestructAs      = [[SMALL_UNIT]],
+
+	  	    
+	  sfxtypes            = {
+	
+	    explosiongenerators = {
+		"custom:tpsmokecloud",
+--		"custom:orc_machinegun_muzzle",
+	    },
+	
+	  },
+
+	  sounds			= {
+	      select = {
+		"Argh_TankSound",
+		},
+	      ok = {
+		"Argh_TankSound",
+		},
+	  },
+
+	  side                = [[GAYS]],
+	  sightDistance       = 500,
+	  smoothAnim          = true,
+	  steeringmode        = [[1]],
+	  TEDClass            = [[TANK]],
+	  turninplace         = 1,
+	  turnRate            = 550,
+	  workerTime          = 0,
+          script              = [[tptank.lua]],
+	
+	  weapons             = {
+	
+	    {
+	      def                = [[Cannon]],
+	      badTargetCategory  = [[SINK FLOAT MINERALS]],
+	      onlyTargetCategory = [[LAND SINK SHIP SWIM FLOAT HOVER]],
+	    },
+	
+	  },
+	
+	
+	  weaponDefs          = {
+	
+	    Cannon = {
+	      name                    = [[Cannon]],
+	      areaOfEffect            = 200,
+	      burst                   = 1,
+	      burstrate               = 0.08,
+	      craterMult              = 0.25,
+	      accuracy                = 100,
+	
+	      damage                  = {
+		Normal = 60, --war 50
+	      },
+	
+	      model                   = [[projmissle.s3o]], -- [[bantimechmissile.s3o]],
+	      dance                   = 2,
+	      wobble                  = 2,
+	      explosionGenerator      = [[custom:tpsmokecloud]],
+	      flightTime              = 4,
+	      interceptedByShieldType = 1,
+	      lineOfSight             = true,
+	      range                   = 400, --war 450 habs runter gemacht damit turrets den panzer outrangen
+	      reloadtime              = 2,
+	      smokeTrail              = true,
+	      soundHit                = [[argh/Argh_LargeExplosion]],
+	      soundStart              = [[kanoba/Canlite3Remake.ogg]],
+	      tolerance               = 8000,
+	      tracks                  = false,
+	      turret                  = true,
+	      weaponType              = [[MissileLauncher]],
+	      weaponVelocity          = 1500,
+	      startVelocity           = 1500,
+	      weaponAcceleration      = 100,
+	    },
+	
+	  },
+	
+	
+	  featureDefs         = {
+	
+	    DEAD  = {
+	      description      = [[Wreckage - Assault Tank]],
+	      blocking         = false,
+	      category         = [[corpses]],
+	      damage           = 1125,
+	      energy           = 0,
+	      featureDead      = [[DEAD2]],
+	      featurereclamate = [[SMUDGE01]],
+	      footprintX       = 2,
+	      footprintZ       = 2,
+	      height           = [[4]],
+	      hitdensity       = [[100]],
+	      metal            = 72,
+	      object           = [[bgenericwreckage.s3o]],
+	      reclaimable      = true,
+	      reclaimTime      = 15,
+	      seqnamereclamate = [[TREE1RECLAMATE]],
+	      world            = [[All Worlds]],
+	    },
+	
+	
+	    DEAD2 = {
+	      description      = [[Debris - Assault Tank]],
+	      blocking         = false,
+	      category         = [[heaps]],
+	      damage           = 750,
+	      energy           = 0,
+	      featurereclamate = [[SMUDGE01]],
+	      footprintX       = 2,
+	      footprintZ       = 2,
+	      height           = [[4]],
+	      hitdensity       = [[100]],
+	      metal            = 36,
+	      object           = [[b2x2heap.s3o]],
+	      reclaimable      = true,
+	      reclaimTime      = 15,
+	      seqnamereclamate = [[TREE1RECLAMATE]],
+	      world            = [[All Worlds]],
+	    },
+	
+	  },
+	
+	}
+	
+	return lowerkeys({ tptank = unitDef })

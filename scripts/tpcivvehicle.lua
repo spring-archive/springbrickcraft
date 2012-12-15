@@ -1,0 +1,1 @@
+local wheel1 = piece "backwheel"local wheel2 = piece "frontwheel"function script.Create()endfunction script.Killed(recentDamage, maxHealth)endfunction script.StartMoving()	Spin(wheel1, x_axis, 5)	Spin(wheel2, x_axis, 5)endfunction script.StopMoving()	StopSpin (wheel1,x_axis, 3)	StopSpin (wheel2,x_axis, 3)end
