@@ -8,6 +8,7 @@ local blownpieces = {}
 
 ------react to enemy fire-----
 function script.HitByWeapon (x, z, weaponDefID, damage)	
+	if weaponDefID == -5 then return 0 end	--no water damage
 --Spring.Echo ("getroffen!")
 	blowdamage = blowdamage + damage
 	if (blowdamage < blowstepdamage) then return damage end	
@@ -21,7 +22,7 @@ function script.HitByWeapon (x, z, weaponDefID, damage)
 				if (exploType) then Explode (explo, exploType) end
 				Hide (explo)
 				table.remove (unblownpieces, exploID)
-				table.insert (blownpieces, explo)			
+				table.insert (blownpieces, explo)
 			else
 				blowdamage = 0 
 			end
@@ -136,7 +137,7 @@ function healthRegained (heal)
 				heal = heal - blowstepdamage
 				--if (exploType) then Explode (explo, exploType) end
 				FlyPieceTo000 (explo, 50, 50)
-				Show (explo)
+				Show (explo)				
 				table.remove (blownpieces, exploID)
 				table.insert (unblownpieces, explo)
 				if (notifyHealed) then healed (heal, explo) end
@@ -183,4 +184,44 @@ function healthRegainedThread ()
 		healthOld = health
 		Sleep (1000)
 	end
+end
+
+
+---smoke
+local SIG_SMOKE = 16
+
+function damageSmoke (ceg50, ceg25)
+	Signal(SIG_AIM)
+	SetSignalMask(SIG_AIM)
+	Sleep (50)
+	local p = 1	
+	while (true) do
+		local health, maxhealth = Spring.GetUnitHealth (unitID)
+		local hp = health / maxhealth
+		if (hp < 0.5) then
+			if (table.getn(blownpieces) > 0) then
+				p = math.random(table.getn(blownpieces))
+			end
+			
+			
+			local x,y,z = Spring.GetUnitPiecePosDir (unitID, p)
+			if (hp < 0.25) then
+				Spring.SpawnCEG(ceg25, x, y, z)
+			else
+				Spring.SpawnCEG(ceg50, x, y, z)
+			end
+		else
+			return
+		end
+		Sleep (400)
+	end	
+end
+
+
+
+
+function CEGAtPiece (effectName, pieceNumber)
+   local x,y,z = Spring.GetUnitPiecePosDir (unitID, pieceNumber)
+   --local dx,dy,dz = Spring.GetUnitPieceDirection (unitID, pieceNumber)
+   Spring.SpawnCEG (effectName, x,y,z)--, dx, dy, dz)
 end

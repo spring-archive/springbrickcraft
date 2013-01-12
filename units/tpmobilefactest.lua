@@ -54,11 +54,10 @@ LeaveTracks = true,
 		{file="n64/4anschluesse.wav",volume=10.0},		
 		{file="n64/controllerpack.wav",volume=10.0},
 		{file="n64/frequenzkontrolle.wav",volume=10.0},
-		{file="n64/istdaseinangriff.wav",volume=10.0},
-		{file="n64/sicherheitsstufe.wav.wav",volume=10.0},
+		{file="n64/istdaseinangriff.wav",volume=10.0},		
 	},
 	  ok = {
-		{file="n64/sicherheitsstufe.wav.wav",volume=10.0},
+		{file="n64/sicherheitsstufe.wav",volume=10.0},
 	},
 	build = {
 		{file="n64/captainschauensiemal.wav",volume=10.0},

@@ -26,8 +26,8 @@ MaxVelocity = 5.0,
 MovementClass = "Vehicle3x3",
 TurnRate = 1200,
 
-sightDistance = 750,  --500
-radarDistance = 1000, --radius
+sightDistance = 1000,  --500 --750
+radarDistance = 1300, --radius
 activateWhenBuilt = true,
 
 Category = [[LAND VEHICLE]],
@@ -62,11 +62,12 @@ trackWidth          = 60,
 	workerTime = 1,
 	buildDistance = 175,
 	terraformSpeed = 9001,
-	canrepair = false,
+	canrepair = false, --test
 	buildoptions = 
 	{
 	"tpwall2x2",
 	"tphq_small",
+	"tppaddler",
 	},
 
 
@@ -80,10 +81,10 @@ trackWidth          = 60,
 		{file="n64/controllerpack.wav",volume=10.0},
 		{file="n64/frequenzkontrolle.wav",volume=10.0},
 		{file="n64/istdaseinangriff.wav",volume=10.0},
-		{file="n64/sicherheitsstufe.wav.wav",volume=10.0},
+		{file="n64/sicherheitsstufe.wav",volume=10.0},
 	},
 	  ok = {
-		{file="n64/sicherheitsstufe.wav.wav",volume=10.0},
+		{file="n64/sicherheitsstufe.wav",volume=10.0},
 	},
 	build = {
 		{file="n64/captainschauensiemal.wav",volume=10.0},

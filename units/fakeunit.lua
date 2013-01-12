@@ -34,7 +34,7 @@ unitDef = {
   turnRate               = 0,
   upright                = false,
   workerTime             = 0,
-  yardMap                = [[yyyy]],
+  yardMap                = [[y]],
   category				 = [[IGNORE]],
   power 				 = 1,--0 causes warning
   

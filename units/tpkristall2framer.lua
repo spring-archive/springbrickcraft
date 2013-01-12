@@ -46,8 +46,7 @@ unitDef = {
 
   onoffable                     = true,
   seismicSignature              = 4,
-  selfDestructAs                = [[ROCK_MINEDOUT]],
-  side                          = [[NKG]],
+  selfDestructAs                = [[ROCK_MINEDOUT]],  
   sightDistance                 = 0,
 
 	  sfxtypes            = {
@@ -58,14 +57,6 @@ unitDef = {
 	
 	  },
 
-	  sounds			= {
-	      select = {
-		"ct/mexthump",
-		},
-	      ok = {
-		"ct/mexthump",
-		},
-	  },
 
   smoothAnim                    = true,
   TEDClass                      = [[METAL]],

@@ -36,7 +36,7 @@ healthmulti=1.5
 include "tpdamagepieces.lua"
 --Spring.Echo ("blowstepdamage:"..blowstepdamage)
 -----------------------------
-
+notifyDamaged = true
 local wheelsn = 4
 
 --signals
@@ -200,4 +200,10 @@ function script.Killed(recentDamage, maxHealth)
 --		Spring.UnitScript.Explode (piece, SFX.FIRE)
 	--end
 end
+
+
+function damaged (damage)
+	StartThread (damageSmoke, "blacksmoke", "tpdamagefire_s")
+end
+
 ------------------------------

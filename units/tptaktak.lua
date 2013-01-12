@@ -62,15 +62,7 @@
 	
 	  },
 
-	  sounds			= {
-	      select = {
-		"yea",
-		maxconcurrent = 1,
-		},
-	      ok = {
-		"Argh_TankSound",
-		},
-	  },
+
 
 	  side                = [[GAYS]],
 	  sightDistance       = 500,

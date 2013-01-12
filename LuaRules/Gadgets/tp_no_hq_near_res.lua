@@ -15,13 +15,13 @@ local mineral = UnitDefNames["tptetra"].id
 local dropoff = UnitDefNames["tphq_small"].id
 
 function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z)
-return true
---[[
+--return true
+
 	if (unitDefID ~= dropoff) then return true end
 	local nearUnits = Spring.GetUnitsInCylinder (x,z, 600, Spring.GetGaiaTeamID ())	
 	for i in pairs(nearUnits) do
 		if (Spring.GetUnitDefID (nearUnits[i]) == mineral) then return false end
 	end
 	return true
-	--]]
+
 end

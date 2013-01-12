@@ -59,14 +59,6 @@ unitDef = {
   seismicSignature    = 4,
   selfDestructAs      = [[MEDIUM_UNIT]],
 
-  sounds			= {
-	  select = {
-	"Argh_TankSound",
-	},
-	  ok = {
-	"loslos",
-	},
-  },
 
 --  sfxtypes            = {
 

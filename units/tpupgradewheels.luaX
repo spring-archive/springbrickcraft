@@ -39,14 +39,7 @@ unitDef = {
   noAutoFire          = false,
   objectName          = [[fatdude.s3o]],
     
-  sounds			= {
-	  select = {
-	"yea",
-	},
-	  ok = {
-	"Argh_TankSound",
-	},
-  },
+
 
 --  sfxtypes            = {
 

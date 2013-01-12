@@ -53,11 +53,9 @@ unitDef = {
 
 	  sounds			= {
 	      select = {
-		"gleichmal",
+		{file="freesound/13743_morsecode.wav",volume=5.0},
 		},
-	      ok = {
-		"golgotha/vehicle_done_44khz",
-		},
+
 	  },
   --ground decal  
   useBuildingGroundDecal =true,
@@ -70,7 +68,7 @@ unitDef = {
   workerTime                    = 1,
   footprintX                    = 4,
   footprintZ                    = 7, --4
-  yardMap                       = [[oooo occo occo occo occo yyyy yyyy yyyy]],
+  yardMap                       = [[oooo occo occo occo occo yyyy yyyy]], --oooo occo occo occo occo yyyy yyyy yyyy
   script                        = [[tpsmallfac.lua]],
 
     sfxtypes = {

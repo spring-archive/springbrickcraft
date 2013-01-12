@@ -34,6 +34,8 @@ TurnRate = 600,
 
 sightDistance = 700,
 
+mass = 9,
+
 Builder = false,
 CanAttack = true,
 CanGuard = true,

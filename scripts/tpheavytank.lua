@@ -73,9 +73,16 @@ table.insert (pieces, wheel2r)
 table.insert (pieces, wheel2l)
 exploType = SFX.FALL + SFX.NO_HEATCLOUD
 notifyHealed = true
+notifyDamaged = true
 include "tpdamagepieces.lua"
 -----------------
-function script.Create()	
+function script.Create()
+	
+	 --unitID,  scaleX,  scaleY,  scaleZ,  offsetX,  offsetY,  offsetX,  vType,  tType,  Axis	
+	--Spring.SetUnitCollisionVolumeData (unitID,  10,  10, 10,  1, 1,  0,  0,  0 , 0)
+	
+	--Spring.SetUnitBlocking (unitID, false, false, false)
+	
 	Sleep (200)
 	--Spring.MoveCtrl.SetGroundMoveTypeData(unitID, "maxSpeed", 0)
 	--Hide (piece "barrel3")
@@ -317,6 +324,7 @@ function resetTracksThread (pID)
 	--WaitForMove (pID, y_axis)
 	--WaitForMove (pID, z_axis)
 	tracks_null ()
+	CEGAtPiece ("repairsparks", pID)
 end
 
 --SHOOTING
@@ -348,4 +356,8 @@ function script.FireWeapon1()
 	Move (barrel, z_axis, 0, 15)	
 	if (bunker==false and driving == false) then StartThread(RestoreAfterDelay) end
 	--RestoreAfterDelay()
+end
+
+function damaged (damage)
+	StartThread (damageSmoke, "blacksmoke", "tpdamagefire_s")
 end

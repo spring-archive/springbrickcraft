@@ -66,12 +66,25 @@ collisionVolumeScales = "190 230 190",	--"220 230 220": einheiten können reincli
 	--"tpgripper",
 	},
 	
-	customParams = {	
+	customParams = {
 	unitguide_text = "blablablablablablabla",
 	--unitguide_goodvs = "Nobody knows yet",
 	--unitguide_weakvs = "Nobody knows yet",
 	unitguide_protip = "Protect this!",
 	}, 
+	
+	
+	sounds			= {
+	  select = {
+	{file="freesound/13743_morsecode.wav",volume=5.0},
+
+	},
+	 ok = {
+	{file="freesound/alphahog/120591_oh-yeah.wav",volume=6.0},
+	},
+  },
+  
+	
 }
 
 return lowerkeys({ [unitName] = unitDef })

@@ -66,18 +66,21 @@
 
 
 	  sounds			= {
-	      select = {		
+	      select = {
+		{file="freesound/95663_radio-cleared-for-the-option.wav",volume=6.0 },
+		  --[[
+		  -- error: has data length 291939 greater than actual data length 56160
 			{ file ="airtraffic/james-uk__atc1.wav", volume=5.0 },	
 			{ file ="airtraffic/james-uk__atc2.wav", volume=5.0 },	
 			{ file ="airtraffic/james-uk__atc3.wav", volume=5.0 },	
 			{ file ="airtraffic/james-uk__atc4.wav", volume=5.0 },	
 			{ file ="airtraffic/james-uk__atc5.wav", volume=5.0 },	
 			{ file ="airtraffic/james-uk__atc6.wav", volume=5.0 },	
+			--]]
 	},		
 	    ok = {
 		"samples/check.ogg",
-		{file="freesound/67644_radio-im-engaging.wav",volume=6.0 },
-		{file="freesound/95663_radio-cleared-for-the-option.wav",volume=6.0 },
+		{file="freesound/67644_radio-im-engaging.wav",volume=6.0 },		
 		{file="freesound/95670_radio-expedite.wav",volume=6.0 },		
 		},
 	  },
@@ -129,7 +132,7 @@
 	      range                   = 500,
 		  cylinderTargeting	  = 1,
 	      reloadtime              = 2,
-	      soundHit                = [[ct/shot3]],
+	      --soundHit                = [[ct/shot3]],
 	      sprayangle              = 64000,
 	      startvelocity           = 2,
 	      weaponType              = [[AircraftBomb]],

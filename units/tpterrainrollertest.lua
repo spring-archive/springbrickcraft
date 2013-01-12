@@ -45,21 +45,9 @@ unitDef = {
   seismicSignature    = 4,
   selfDestructAs      = [[MEDIUM_UNIT]],
 
-  sounds			= {
-	  select = {
-	"yea",
-	},
-	  ok = {
-	"samples/fire.ogg",
-	},
-  },
 
-  sfxtypes            = {
-	explosiongenerators = {
-	"custom:tpmuzzleflash_small",
-	},
 
-  },
+
 
   side                = [[GAYS]],
   sightDistance       = 350,--250

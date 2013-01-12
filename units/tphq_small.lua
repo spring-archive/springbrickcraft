@@ -7,7 +7,7 @@ local unitDef =
 	ObjectName = "3x3cube_small.s3o",	
 	TEDClass = "PLANT",
 	script = "tphq_small.lua",
-	buildPic = "placeholder.png",
+	buildPic = "tphq_small.png",
 -- Unit limitations and properties
 	Description = "expand your base with this smaller version of the Master Cube",
 	MaxDamage = 2500,

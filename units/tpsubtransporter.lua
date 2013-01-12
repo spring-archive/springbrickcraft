@@ -67,7 +67,6 @@ unitDef = {
 	{file="freesound/Xythe/ghost_shadows.wav",volume=6.0},
 	},
 	  ok = {
---	{file="loslos",volume=6.0},
 	{file="freesound/idensai-I/toasty.wav",volume=6.0},
 	},
   },

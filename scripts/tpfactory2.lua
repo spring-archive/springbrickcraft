@@ -49,6 +49,8 @@ local debrisSmoke = SFX.CEG+1
 local pumpspeed = 20
 local building = false
 local allpieces = Spring.GetUnitPieceMap  (unitID)
+notifyDamaged = true
+
 --local smokepoint1 = {}  --x, y, z von den chimXhigh pieces
 --local smokepoint2 = {}
 --local smokepoint3 = {}
@@ -217,4 +219,8 @@ function unitName (unitID)
 	local udID =Spring.GetUnitDefID(unitID)
 	local uDef = UnitDefs [udID]
 	return uDef.name
+end
+
+function damaged ()
+	StartThread (damageSmoke, "blacksmoke", "tpdamagefire")
 end

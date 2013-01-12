@@ -37,7 +37,7 @@ unitDef = {
   category				 = [[IGNORE]],
   power 				 = 1,--0 causes warning
   
-  yardMap                = [[oooo]],
+  yardMap                = [[o]],
 }
 
 return lowerkeys({ fakeblockunit = unitDef })

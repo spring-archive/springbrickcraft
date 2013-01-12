@@ -74,10 +74,12 @@ unitDef = {
   sounds			= {
 	  select = {
 	{file="samples/whoisthis.wav",volume=6.0},
-	{file="freesound/ERH/whatlocation.wav",volume=6.0},		
+	{file="freesound/ERH/whatlocation.wav",volume=6.0},
+	{file="freesound/shawshank73/95702_bumpy-ride.wav",volume=6.0},	
 	},
 	  ok = {
 	{file="samples/check.ogg",volume=6.0},
+	{file="freesound/alphahog/47148_hmmmhmmmhm.wav",volume=6.0},	
 	},
   },
 
@@ -125,7 +127,7 @@ unitDef = {
 	  range                   = 500,
 	  cylinderTargeting	  = 1,
 	  reloadtime              = 2,
-	  soundHit                = [[ct/shot3]],
+	  --soundHit                = [[ct/shot3]],
 	  sprayangle              = 64000,
 	  startvelocity           = 2,
 	  weaponType              = [[AircraftBomb]],

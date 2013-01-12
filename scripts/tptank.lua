@@ -36,7 +36,7 @@ table.insert (pieces, piece ("barrel1"))
 include "tpdamagepieces.lua"
 --Spring.Echo ("blowstepdamage:"..blowstepdamage)
 -----------------------------
-
+notifyDamaged = true
 --signals
 local SIG_AIM = 2
 local muzzleCEG = SFX.CEG
@@ -115,4 +115,8 @@ end
 function script.Killed(recentDamage, maxHealth)
 	--der fahrer hängt sonst im wreck?
 	--return 0
+end
+
+function damaged ()
+	StartThread (damageSmoke, "blacksmoke", "tpdamagefire_s")
 end

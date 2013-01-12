@@ -125,7 +125,7 @@
 	      range                   = 500,
 		  cylinderTargeting	  = 1,
 	      reloadtime              = 2,
-	      soundHit                = [[ct/shot3]],
+	      --soundHit                = [[ct/shot3]],
 	      sprayangle              = 64000,
 	      startvelocity           = 2,
 	      weaponType              = [[AircraftBomb]],

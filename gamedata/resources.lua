@@ -54,6 +54,7 @@ local   resources = {
 			fuzzysquare = 'effects/fuzzysquare.png',
 			fuzzyring = 'effects/fuzzyring.png',
 			blurring = 'effects/blurring.png',
+			firesquare = 'effects/firesquare.png',
 		 },
       }
    }
