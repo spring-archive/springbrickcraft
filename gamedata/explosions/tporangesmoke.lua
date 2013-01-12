@@ -1,0 +1,36 @@
+return {
+  ["orangesmoke"] = {
+    orangesmoke= {
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      count              = 1,
+      ground             = true,
+      underwater         = 1,
+      useairlos          = true,
+      water              = true,
+      alwaysVisible = 0,
+	  properties = {
+        alwaysVisible = 0,
+        explosiongenerator = [[custom:orangesmoke]],
+		airdrag            = 0.99,--0.9
+        colormap           = [[0.5 0.25 0 1   1 0.5 0 0.9  0 0 0 0]],
+        directional        = false,
+        emitrot            = 0,
+        emitrotspread      = 10,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, 0.15 , 0]],
+        numparticles       = 1,
+        particlelife       = 20,
+        particlelifespread = 10,
+        particlesize       = 4,
+        particlesizespread = 4,
+        particlespeed      =  1.5,
+        particlespeedspread = 3.5,
+        pos                = [[0, 0, 0]],
+        sizegrowth         = -0.02,
+        sizemod            = 1.0,
+        texture            = [[fuzzysquare]],
+      },
+    },
+  },
+}

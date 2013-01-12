@@ -75,7 +75,7 @@ unitDef = {
 	  select = {
 	{file="samples/whoisthis.wav",volume=6.0},
 	{file="freesound/ERH/whatlocation.wav",volume=6.0},
-	{file="freesound/shawshank73/95702_bumpy-ride.wav",volume=6.0},	
+--	{file="freesound/shawshank73/95702_bumpy-ride.wav",volume=6.0},	
 	},
 	  ok = {
 	{file="samples/check.ogg",volume=6.0},
