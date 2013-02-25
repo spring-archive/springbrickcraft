@@ -3,9 +3,9 @@
 	  name                = [[Cruise Missile]],
 	  script = "tpabfang.lua",
 		acceleration = 1,		
-		brakerate = 1,
-		 -- kamikaze               = true,
-		--kamikazeDistance       = 60,
+		brakerate = 1,--1
+		  --kamikaze               = true,
+		--kamikazeDistance       = 100,--60
 		verticalSpeed = 3,
 		buildcostenergy = 0,
 		buildcostmetal = 1,
@@ -61,7 +61,7 @@ bombs = {
 	      --damage
 		  damage = {
 				Normal = 25,--50
-				},	      
+				},
 	      areaOfEffect            = 50,
 		  --physics
 		  weaponVelocity          = 250,
@@ -70,6 +70,7 @@ bombs = {
 --	      burstrate               = 0.08,
 		  projectiles = 2,
 		  range                   = 100, --50
+		  cylinderTargetingDefault = 10,
 		  sprayAngle              = 6000, --9000
 	      tolerance               = 16000, --8000
 		  lineOfSight             = true,
@@ -84,6 +85,8 @@ bombs = {
 	      stages                  = 20,
 		  separation              = 1,
 		  startSmoke			  =1,
+		  AvoidFeature		    = false,
+		  AvoidFriendly = false,
 		  --bouncing
 		  --NumBounce				  = 8,
 		  --groundbounce			  = true,

@@ -1,3 +1,6 @@
+--problem: tptetra unit remains and blocks shots / small units can hide in its colvol. and blob shadows draws shadow
+--fixed by making colvol of tptetra very small. but now it is harder to click on them with miners
+
 --speichern welcher miner gerade welches mineral mined
 --wenn dieses dann destroyed ist, muss er ein neues suchen
 --thanks  Andrej,  zwzsg, quantum and #ca and google_frog
@@ -26,6 +29,9 @@ local resourcesCount = 0
 local resourcesUnit = {}
 
 local debug = false
+function DoNotWantEchoSpam ()
+end
+Spring.Echo = DoNotWantEchoSpam
 -----config-----
 local fake_unit = "fakeunit"
 local fake_block_unit = "fakeblockunit"
@@ -80,9 +86,8 @@ local function SpawnResource (sx,sz, unitname)
     local losCheck = Spring.CreateUnit(fake_unit, sx, sh, sz, 0, Spring.GetGaiaTeamID())	
     Spring.Echo ("returned unitID:   losCheck=" .. (losCheck or "nil") )
 	local block = Spring.CreateUnit(fake_block_unit, sx, sh, sz, 0, Spring.GetGaiaTeamID())    
-	Spring.SetUnitCollisionVolumeData(losCheck, 1,1,1,0,-10,0,0,0,0)	
+	Spring.SetUnitCollisionVolumeData(losCheck, 1,1,1,0,-10,0,0,0,0)
 	Spring.SetUnitCollisionVolumeData(block, 1,1,1,0,-10,0,0,0,0)
-	
   
     resources[resourcesCount] = {unit = {}, health = UnitDefNames[unitname].health, losCheck = losCheck, block = block}
     resourcesUnit[losCheck] = resourcesCount
@@ -91,7 +96,8 @@ local function SpawnResource (sx,sz, unitname)
     
     for _,allyTeam in ipairs(Spring.GetAllyTeamList()) do
         local unitID = Spring.CreateUnit(unitname, sx, sh, sz, rotation, Spring.GetGaiaTeamID())
-         Spring.SetUnitBlocking(unitID, false, false)
+        Spring.SetUnitCollisionVolumeData(unitID, 10,10,10  ,0,0,0, 0,1,0)	 --test
+		Spring.SetUnitBlocking(unitID, false, false)
         resources[resourcesCount].unit[allyTeam] = unitID
         resourcesUnit[unitID] = resourcesCount
         Spring.GiveOrderToUnit(unitID, CMD.ONOFF, { 0 }, {} )
@@ -112,8 +118,9 @@ function gadget:UnitEnteredLos(unitID, unitTeam, allyTeam, unitDefID)
         local resID = res.unit[allyTeam]
         if Spring.ValidUnitID(resID) and select(1, Spring.GetUnitHealth(resID)) ~= res.health then
             if res.health then
-                Spring.AddUnitDamage(resID, select(1, Spring.GetUnitHealth(resID)) - res.health)
-                --Spring.SetUnitHealth(resID, res.health)
+                --Spring.AddUnitDamage(resID, select(1, Spring.GetUnitHealth(resID)) - res.health)				
+                Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)
+				--Spring.SetUnitHealth(resID, res.health)
             else
                 Spring.DestroyUnit(resID)
             end
@@ -140,8 +147,10 @@ local function damageResource(resourceID, damage)
             local los = Spring.GetUnitLosState(res.losCheck, allyTeam)
             if los and los.los then
                 if res.health then
-                    Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health)
-                    --Spring.SetUnitHealth(unitID, res.health)
+                    --Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health)
+                    Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)
+					
+					--Spring.SetUnitHealth(unitID, res.health)
                 else
                     Spring.DestroyUnit(unitID)
                 end
@@ -196,6 +205,16 @@ end
 
 
 function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam) 	
+	--try to fix: minerals get damaged by units but look unharmed until they get mined: then they suddendly lose all pieces
+	--das passiert aber weil script.hitbyweapon for unitpredamaged aufgerufen wird (?)
+	Spring.Echo (unitID.."attacked by " .. (attackerID or "nil"))
+	Spring.Echo ("attacked unit is a "  .. UnitDefs[Spring.GetUnitDefID(unitID)].name .. " of team " .. unitTeam)
+	
+	
+	if (unitDefID == fake_unit_DefID or unitDefID == fake_block_unit_DefID) and (attackerID ~=unitID) then return 0,0 end
+	--if (is_resource_type (unitDefID) and not is_miner(attackerID)) and weaponID~=-100 then return 0,0 end	--other units can not damage minerals
+	--test
+	
 	if (is_resource_type (unitDefID) and is_miner(attackerID)) then
 		miners[attackerID].lastMineActionTimer = 0
 		--fill the cargo bay of the miner, alot of options here....:
@@ -235,6 +254,9 @@ function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, 
 			return 0,0
 		end
         damageResource(resourcesUnit[unitID], 10)
+		--tell the mineral it was indeed mined so it can lose pieces:
+		--env = Spring.UnitScript.GetScriptEnv(unitID)
+		--if (env) then Spring.UnitScript.CallAsUnit(unitID, env.notifyDamage, 10) end
         return 0
 	end
     if unitDefID == fake_unit_DefID then

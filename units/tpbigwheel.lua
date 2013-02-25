@@ -58,7 +58,8 @@ unitDef = {
 	},
 	  ok = {
 --	{file="loslos",volume=6.0},
-	{file="freesound/idensai-I/toasty.wav",volume=6.0},
+--	{file="freesound/idensai-I/toasty.wav",volume=6.0},
+	{file="freesound/alphahog/47148_hmmmhmmmhm.wav",volume=6.0},
 	},
   },
 --  sfxtypes            = {

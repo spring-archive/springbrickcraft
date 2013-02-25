@@ -75,7 +75,7 @@
 		--"Argh_TankSound",
 		{file="freesound/TheBaron/ready2rocknroll.wav", volume=6.0,},
 		{file="freesound/Nickleus/ahyeah.wav", volume=6.0,},		
-		{file="freesound/alphahog/46011_systems-online.wav",volume=6.0},
+		{file="freesound/alphahog/46011_systems-online.wav",volume=8.0},
 		},
 	      ok = {
 		{file="freesound/idensai-I/rocknroll.wav", volume=6.0,},

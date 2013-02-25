@@ -10,7 +10,7 @@ local modinfo = {
 
         depend = {
                 "cursors.sdz",
-				         --"Spring Features 1.0",
+--				         "Spring Features",
         }
 } 
 return modinfo

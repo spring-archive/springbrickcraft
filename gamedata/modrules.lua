@@ -1,4 +1,12 @@
+Spring.Echo ("modrules!")
+
 return {
+
+movement = {
+  allowGroundUnitGravity=true,
+  allowUnitCollisionDamage=false,
+  allowUnitCollisionOverlap=false,
+},
 
 --bugged in pre 83.x
 -- http://springrts.com/phpbb/viewtopic.php?f=14&t=27063
@@ -31,8 +39,6 @@ experience = {
     -- default 3
     featureVisibility = 0;
   },
-
-  
 
   sensors = {
     requireSonarUnderWater = false,  -- defaults to true

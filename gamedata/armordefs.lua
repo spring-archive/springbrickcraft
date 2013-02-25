@@ -1,5 +1,6 @@
 local armorDefs = {
-Normal = {
+--was Normal
+default = {
 	"tptank",
 	"tpjeep",
 	"tpfactory",

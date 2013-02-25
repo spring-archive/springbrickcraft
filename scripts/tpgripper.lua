@@ -56,7 +56,11 @@ local armspeed = math.rad(180)
 local cargo = 0
 
 function script.Create()
-	Hide (mineral)
+	Hide (mineral)	
+	if Spring.GetGameFrame () < 5 then
+		getTogether (900, 600)
+		Sleep (3000)
+	end
 	initTracks ()
 	--Spring.Echo ("unit GRIPPER " .. unitID .. " was created!")
 	--Sleep (100)	

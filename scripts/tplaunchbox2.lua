@@ -129,7 +129,7 @@ function launchMissilesThread (targetX,targetY,targetY)
 		--local x,y,z = Spring.GetUnitPosition (unitID)
 		local x,y,z = Spring.GetUnitPiecePosDir (unitID, flare[launches])
 		local missile = Spring.CreateUnit ("tpabfang", x,y,z, math.random(1,4), teamID)
-		Spring.SetUnitNoSelect (missile, true)
+		--Spring.SetUnitNoSelect (missile, true)
 		Spring.GiveOrderToUnit(missile, CMD.FIRE_STATE , { 0 }, {}) --hold fire
 		Spring.GiveOrderToUnit(missile, CMD.ATTACK  , {targetX,targetY,targetY}, {CMD.OPT_INTERNAL}) 
 		

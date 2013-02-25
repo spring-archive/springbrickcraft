@@ -44,7 +44,7 @@ unitDef = {
   footprintZ          = 3,
   idleAutoHeal        = 0,  
   maneuverleashlength = [[640]],
-  mass                = 200,
+  mass                = 200,--200
   maxDamage           = 300,
   maxSlope            = 45, --18
   maxVelocity         = 5.5, --20, --(was 5) script sets it lower so upgrade can increase it again http://springrts.com/mantis/view.php?id=2877
@@ -64,7 +64,7 @@ unitDef = {
 	{file="freesound/acclivity/muststayonpath.wav",volume=6.0},
 	{file="freesound/104432_wrongnumber.wav",volume=6.0},
 	{file="freesound/104432_thisis912.wav",volume=6.0},
-	{file="freesound/alphahog/46852_get-in-the-car.wav",volume=6.0},
+	{file="freesound/alphahog/46852_get-in-the-car.wav",volume=8.0},
 	},
 	  ok = {
 	{file="samples/loslos.wav",volume=6.0},
@@ -121,9 +121,9 @@ unitDef = {
 	      lineOfSight             = true,
 	      range                   = 350,
 	      reloadtime              = 0.8, --0.4
-	      rgbColor                = [[1 0.95 0.4]],
+	      rgbColor                = [[1 0.6 0.2]],
 	      separation              = 2,
-          size                    = 1.25,
+          size                    = 1.6,
 	      soundStart              = [[Argh_heavy_machinegun]],
 	      soundStartVolume        = 0.8,
 	      soundTrigger            = true,

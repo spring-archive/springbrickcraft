@@ -46,7 +46,9 @@ function spawn_player (x, z, teamID)
 	if (facing=="south") then dz=200 end
 	if (facing=="west") then dx=-200 end
 	if (facing=="east") then dx=200 end
-	Spring.CreateUnit("tpgripper", x+dx, y, z+dz, facing, teamID)
+	local miner = Spring.CreateUnit("tpgripper", x+dx, y, z+dz, facing, teamID)
+	--env = Spring.UnitScript.GetScriptEnv(miner)
+	--if (env) then Spring.Echo ("miner animation") Spring.UnitScript.CallAsUnit(miner, env.getTogether, 300, 200) end
 	Spring.SetTeamResource(teamID, "ms", 99999999999999999999999)
 	local startingmetal=4000
 	local modOptions = Spring.GetModOptions()

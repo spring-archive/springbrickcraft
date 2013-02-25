@@ -11,7 +11,7 @@ function gadget:GetInfo()
 end
 
 if (not gadgetHandler:IsSyncedCode()) then return end
-local mineral = UnitDefNames["tptetra"].id
+local mineral =UnitDefNames["fakeblockunit"].id -- UnitDefNames["tptetra"].id
 local dropoff = UnitDefNames["tphq_small"].id
 
 function gadget:AllowUnitCreation(unitDefID, builderID, builderTeam, x, y, z)

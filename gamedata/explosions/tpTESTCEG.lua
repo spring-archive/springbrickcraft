@@ -1,15 +1,14 @@
---flash of explosive light with flying dirt (when ground it hit)
---use by tpheavytank
+--temp ceg for testing
 --based on "tremor" ceg from zero k
 
 return {
-  ["tpexplosive"] = {
+  ["tptestceg"] = {
     air                = true,
     count              = 1,
     ground             = true,
     water              = false,
     debris1 = { --stuff that does outwards
-      air                = false,
+      air                = true,
       class              = [[CSimpleParticleSystem]],
       count              = 5,
       ground             = true,
@@ -63,7 +62,7 @@ return {
       },
     },
     dirt2 = {
-      air                = true,
+      air                = false,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
       ground             = true,
@@ -98,12 +97,12 @@ return {
       water              = true,
       properties = {
         alpha              = 1,
-        alphadecay         = 0.1,
+        alphadecay         = 0.2,
         color              = [[1 ,0.9 ,0.9]],
         --dir                = [[-15 r50,-15 r50,-15 r50]],
-		dir                = [[-10 r10,-10 r5,-10 r10]],
-        length             = 80,
-        width              = 10,
+		dir                = [[-10 r10,-5 r5,-10 r10]],
+        length             = 30,
+        width              = 5,
       },
     },
 	
@@ -122,6 +121,4 @@ return {
   },
 
 }
-
-
 

@@ -127,7 +127,7 @@ unitDef = {
 	      accuracy                = 0,--100 -5000
 	
 	      damage                  = {
-			Normal = 100, --75 war bevor es zum targetmarker wurde und ab da 1
+			Normal = 1, --75 war bevor es zum targetmarker wurde und ab da 1
 	      },
 		  CegTag				 = "tpshocktrail", --"tpmisslesmoke_cartoon_purple", --"tpmisslesmoke",
 	      model                   = "projmissle.s3o", --"20empty.s3o", -- [[projmissle.s3o]], -- [[bantimechmissile.s3o]],
@@ -139,7 +139,7 @@ unitDef = {
 	      interceptedByShieldType = 1,
 	      lineOfSight             = true,
 	      range                   = 1200,--800
-	      reloadtime              = 10.0, --1 --4.0 --8.0
+	      reloadtime              = 12.0, --1 --4.0 --8.0
 	      smokeTrail              = false,
 	      soundHit                = [[tp/woohoping.wav]],
 	      soundStart              = [[kanoba/Torpedo1Remake.ogg]],
@@ -151,8 +151,8 @@ unitDef = {
 		  TrajectoryHeight		  = 2, --2
 		  turret                  = true,
 	      weaponType              = [[MissileLauncher]],
-	      weaponVelocity          = 100,--1000
-	      startVelocity           = 100,--1000
+	      weaponVelocity          = 1000,--1000
+	      startVelocity           = 1000,--1000
 	      weaponAcceleration      = 10,
 	    },
 		

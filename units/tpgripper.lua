@@ -46,20 +46,20 @@ unitDef = {
   selfDestructAs      = [[MEDIUM_UNIT]],
 
   --wall building	
-	Builder = true,
+--	Builder = true,
     Reclaimable = false,
-	ShowNanoSpray = false,
-	CanBeAssisted = false,
-	canAssist = false,
-	canRestore = false,
-	workerTime = 1,
-	buildDistance = 175,
-	terraformSpeed = 9001,
-	canrepair = false,
-	buildoptions = 
-	{
-	"tpwall2x2",
-	},
+--	ShowNanoSpray = false,
+--	CanBeAssisted = false,
+--	canAssist = false,
+--	canRestore = false,
+--	workerTime = 1,
+--	buildDistance = 175,
+--	terraformSpeed = 9001,
+--	canrepair = false,
+--	buildoptions = 
+--	{
+--	"tpwall2x2",
+--	},
   
   sounds			= {
 	  select = {
@@ -134,7 +134,8 @@ unitDef = {
 	      tolerance               = 8000,
 	      turret                  = true,
 	      weaponType              = [[Cannon]],
-	      weaponVelocity          = 750,	      
+	      weaponVelocity          = 300,--750
+		  --myGravity = 0, --war nicht
 		},
 	
 	  },

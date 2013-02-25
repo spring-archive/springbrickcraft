@@ -45,6 +45,7 @@ function gadget:Initialize()
 end
 
 --no water damage
+--must be in unitscript or units still lose pieces...
 --function gadget:UnitPreDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, attackerID, attackerDefID, attackerTeam)
 	--if weaponDefID and weaponDefID==-5 then return 0.01 end
 --end

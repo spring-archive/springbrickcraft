@@ -117,6 +117,9 @@ function script.Killed(recentDamage, maxHealth)
 	--return 0
 end
 
-function damaged ()
+function damaged (damage)
+	if (damage or 0) > 100 then
+		getTogether (10,10)
+	end
 	StartThread (damageSmoke, "blacksmoke", "tpdamagefire_s")
 end

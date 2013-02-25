@@ -133,9 +133,9 @@ end
 
 function script.Create()
 
-	local p = Spring.GetUnitPieceMap (unitID)
+	--local p = Spring.GetUnitPieceMap (unitID)
 		
-	Spring.Echo ("p= " .. (p["weaponcenter"] or "nil"))
+	--Spring.Echo ("p= " .. (p["weaponcenter"] or "nil"))
 	--Spring.MoveCtrl.SetGroundMoveTypeData(unitID, "maxSpeed", 0)
 	--Spring.MoveCtrl.SetGroundMoveTypeData(unitID, "turnRate",0)
 	

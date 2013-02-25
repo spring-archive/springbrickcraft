@@ -20,8 +20,10 @@ Spring.Echo ("--weapondefs editing--")
 	if (not weaponDef.damage.nomineDamage) then
 		weaponDef.damage.nominedamage = weaponDef.damage.normal --hä?
 	end
-	--shield reagiert nur auf default damage?
-	--weaponDef.damage.default = weaponDef.damage.normal
+	--shield reagiert nur auf default damage(?)
+	--krater gehen nur mit default damage
+	weaponDef.damage.default = weaponDef.damage.normal
+	weaponDef.damage.normal = nil
  end
  
 

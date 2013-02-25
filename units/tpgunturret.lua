@@ -58,7 +58,7 @@ unitDef = {
 	damage                  = {
 		Normal = 75,			--50
 		},
-	explosionGenerator      = [[custom:tporangeimpact_small]],
+	explosionGenerator      = "custom:tpturretorangehit", -- "custom:tporangeimpact_small",
 	lineOfSight             = true,
 	AvoidFeature		    = false,
 	range                   = 450,

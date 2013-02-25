@@ -51,7 +51,16 @@ local moveDefs = {
 		minwaterdepth = 5,                                        
 		crushstrength = 100,
 	},	
-		
+	
+	Climber1x1 = {
+		footprintx = 1,
+		footprintz = 1,
+		maxwaterdepth = 22,
+		maxslope = climber_maxslope,
+		slopemod = 0,
+		crushstrength = 100,
+	},
+	
 	Climber2x2 = {
 		footprintx = 2,
 		footprintz = 2,

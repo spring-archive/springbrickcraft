@@ -6,11 +6,14 @@ local blowstepdamage = (maxhealth*(healthmulti or 1.3) / maxpieces)
 local blowdamage = 0
 local blownpieces = {}
 
+local drill = WeaponDefNames["tpgripper_drill"].id
+
 ------react to enemy fire-----
 function script.HitByWeapon (x, z, weaponDefID, damage)	
+	Spring.Echo ("drill:" .. drill .. "  weaponDefID:" .. weaponDefID)
+	if weaponDefID ~= drill and weaponDefID~= -2 then return 0 end
 	if weaponDefID == -5 then return 0 end	--no water damage
-	if (notifyDamaged) then damaged (damage) end
-	--Spring.Echo ("getroffen!")
+--Spring.Echo ("getroffen!")
 	blowdamage = blowdamage + damage
 	if (blowdamage < blowstepdamage) then return damage end	
 	blownnumber = math.ceil(damage / blowstepdamage)	
@@ -29,6 +32,7 @@ function script.HitByWeapon (x, z, weaponDefID, damage)
 			end
 		end
 	end	
+	if (notifyDamaged) then damaged (damage) end
 	return damage
 end
 ------------------------------
@@ -191,8 +195,8 @@ end
 local SIG_SMOKE = 16
 
 function damageSmoke (ceg50, ceg25)
-	Signal(SIG_SMOKE)
-	SetSignalMask(SIG_SMOKE)
+	Signal(SIG_AIM)
+	SetSignalMask(SIG_AIM)
 	Sleep (50)
 	local p = 1	
 	while (true) do
