@@ -13,7 +13,6 @@ unitDef = {
   canAttack           = true,
   canstop             = [[1]],
   category            = [[LAND BUILDING]],
-  corpse              = [[DEAD]],
   reclaimable         = false,
   explodeAs           = [[SMALL_BUILDING]],
   footprintx          = 3,

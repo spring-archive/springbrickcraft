@@ -16,7 +16,6 @@ unitDef = {
   canPatrol           = true,
   canstop             = [[1]],
   category            = [[LAND VEHICLE]],
-  corpse              = [[DEAD]],
   reclaimable         = false,
 --COLLISION  
   --collisionVolumeOffsets        = [[0 0 -20]],  --rechts/link	hoch/runter		vor/zurück
@@ -114,8 +113,8 @@ unitDef = {
 	      collideFriendly         = false,
 
 	    damage                  = {
-		Normal = 0.1,
-		Minerals = 10, --100
+		--Normal = 0.1,
+		minerals = 666,--10, --100
 	      },
 		  impactOnly			  = true,	--war nicht
 	      explosionGenerator      = "custom:tpflyingmineralshard",

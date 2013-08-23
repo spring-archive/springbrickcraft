@@ -7,7 +7,6 @@ local
   [1] = {
     name      = 'Cubonauts',
     startunit = 'tphq',
-
   },
 
 

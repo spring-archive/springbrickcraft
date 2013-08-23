@@ -16,7 +16,6 @@ unitDef = {
   canPatrol           = true,
   canstop             = [[1]],
   category            = [[LAND VEHICLE]],
-  corpse              = [[DEAD]],
   reclaimable         = false,
   --HITBOX--
 	  collisionVolumeTest       =  1,	
@@ -45,9 +44,10 @@ unitDef = {
   idleAutoHeal        = 0,  
   maneuverleashlength = [[640]],
   mass                = 200,--200
-  maxDamage           = 300,
+  maxDAMAGE           = 300,
   maxSlope            = 45, --18
   maxVelocity         = 5.5, --20, --(was 5) script sets it lower so upgrade can increase it again http://springrts.com/mantis/view.php?id=2877
+  maxReverseVelocity  = 5.5, --TEST
   maxWaterDepth       = 22,
   minCloakDistance    = 75,
   movementClass       = [[Vehicle3x3]],
@@ -55,7 +55,7 @@ unitDef = {
   moveState           = 0,
   noAutoFire          = false,
   noChaseCategory     = [[MINERALS]],
-  objectName          = [[jeep.s3o]],
+  objectName          = "jeep.s3o", --"eolienne_eclipse.dae", --"jeep.s3o",
   seismicSignature    = 4,
   selfDestructAs      = [[MEDIUM_UNIT]],
 
@@ -102,6 +102,10 @@ unitDef = {
 	  def                = [[Gatling]],
 	  onlyTargetCategory = [[LAND BUILDING BIO SHIP SWIM AIR]], --AIR war nicht
 	  badTargetCategory  = [[AIR BUILDING VEHICLE]],
+	  
+	  --mainDir = [[0 1 0]],--TEST!!
+	  --maxAngleDif = 220,--TEST!!
+	  
 	},
   },
 
@@ -140,7 +144,7 @@ unitDef = {
 	  },  
   
 	customParams = {	
-	unitguide_text = "blablablablablablabla", --no subtables in customParams? meh.
+	unitguide_text = "blablablablablablabla",
 	unitguide_goodvs = "Infantry",
 	unitguide_weakvs = "Vehicles",
 	unitguide_protip = "Can transport dudes.",

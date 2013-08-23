@@ -31,7 +31,7 @@ end
 
 
 
-function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam) 
+function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam) 
 	if weaponID and freezerWeapon[weaponID] then
 		freezeUnit (unitID, 300)
 		return 0

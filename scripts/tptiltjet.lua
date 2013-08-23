@@ -143,7 +143,12 @@ function script.QueryTransport(passengerID)
 	--return base
 end
 
-function script.TransportDrop (each, passengerID)
+function script.EndTransport ()
+	Spring.Echo ("script.TransportDrop")
+	for i,uid in pairs(Spring.GetUnitIsTransporting(unitID)) do
+		Spring.Echo (i .." - " .. uid)
+		Spring.UnitScript.DropUnit (uid)
+	end
 end
 
 function script.TransportPickup (passengerID)

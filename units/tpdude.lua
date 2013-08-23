@@ -15,8 +15,7 @@ unitDef = {
   canMove             = true,
   canPatrol           = true,
   canstop             = [[1]],
-  category            = [[BIO LAND]],
-  corpse              = [[DEAD]],
+  category            = [[BIO LAND]],  
   reclaimable         = false,
   --HITBOX--
   collisionVolumeTest       =  1,
@@ -125,6 +124,7 @@ unitDef = {
 	unitguide_goodvs = "Nothing",
 	unitguide_weakvs = "Everything",
 	unitguide_protip = "Build a lot of those",
+	unitdraw = true,
 	},
 }
 

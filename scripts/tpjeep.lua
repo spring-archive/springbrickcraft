@@ -1,3 +1,5 @@
+
+
 --Spring.UnitScript.SetUnitValue(COB.MAX_SPEED, 0)
 --Spring.MoveCtrl.SetGroundMoveTypeData(unitID, "maxSpeed", 0)
 
@@ -46,6 +48,7 @@ local gunflash = SFX.CEG
 
 -------DRIVING-----
 function script.StartMoving()
+	Spring.Echo ("StartMoving jeep " .. Spring.GetGameFrame ())
 --	StartThread(drive)
 	Spin(wheel1, x_axis, 7) Spin(wheel1b, x_axis, 7)
 	Spin(wheel2, x_axis, 7) Spin(wheel2b, x_axis, 7)
@@ -53,7 +56,10 @@ function script.StartMoving()
 	Spin(wheel4, x_axis, 7) Spin(wheel4b, x_axis, 7)
 	--Turn (body, x_axis, math.rad(20), math.rad(180))
 end
+
 function script.StopMoving()
+	Spring.Echo ("StopMoving jeep" .. Spring.GetGameFrame ())
+
 --	StartThread(stopdrive)
 	StopSpin (wheel1,x_axis, 3) StopSpin (wheel1b,x_axis, 3)
 	StopSpin (wheel2,x_axis, 3) StopSpin (wheel2b,x_axis, 3)
@@ -132,7 +138,7 @@ end
 --end
 
 function script.Create()
-
+Spring.Echo ("jeeeeeep")
 	--local p = Spring.GetUnitPieceMap (unitID)
 		
 	--Spring.Echo ("p= " .. (p["weaponcenter"] or "nil"))

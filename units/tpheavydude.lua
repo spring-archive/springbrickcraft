@@ -17,7 +17,6 @@ unitDef = {
   canstop             = [[1]],
   --OnOffable			  =true,
   category            = [[LAND BIO]],
-  corpse              = [[DEAD]],
   reclaimable         = false,
   --HITBOX--
   collisionVolumeTest       =  1,

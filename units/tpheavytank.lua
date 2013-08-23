@@ -1,7 +1,7 @@
 unitDef = {
   unitname            = [[tpheavytank]],
   name                = [[Blocker]],
-  description         = [[Bam, total devastation!]],
+  description         = [[Bam, total devastation! 66 pieces.]],
   acceleration        = 1,
   bmcode              = [[1]],
   brakeRate           = 1,
@@ -92,7 +92,7 @@ unitDef = {
   turninplace         = 1,
   turnRate            = 550,
   workerTime          = 0,
-	  script              = [[tpheavytank.lua]],
+	  script              = "tpheavytank.lua", -- [[tpheavytank.lua]],
 --CanDgun=1,
 
   weapons             = {
@@ -117,7 +117,7 @@ unitDef = {
 	  damage                  = {
 	Normal = 300,--100 --200
 	  },
-
+	  impulseBoost = 500,
 	  model                   = [[projbig.s3o]],
 	  dance                   = 2,
 	  wobble                  = 2,

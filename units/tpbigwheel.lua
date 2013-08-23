@@ -16,8 +16,7 @@ unitDef = {
   canPatrol           = true,
   canstop             = [[1]],
   category            = [[LAND VEHICLE]],
-  corpse              = [[DEAD]],
-  reclaimable         = false,
+    reclaimable         = false,
   --HITBOX--
 	  collisionVolumeTest       =  1,	
 	  collisionVolumeOffsets    =  [[0 0 0]],  --positiv = nach oben

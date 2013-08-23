@@ -12,11 +12,12 @@ end
 
 
 
-if (not gadgetHandler:IsSyncedCode()) then return end
+if (gadgetHandler:IsSyncedCode()) then
 
 local clusterWeapon = {}
 --chainWeapons[WeaponDefNames["tpjeep_gatling"].id] = true
 --clusterWeapon[WeaponDefNames["dualcannon"].id] = {id=WeaponDefNames["dualcannon"].id, cluster=10}
+
 
 
 clusterWeapon[WeaponDefNames["tplaunchbox_targetmarker"].id] = true -- {id=WeaponDefNames["tplaunchbox_cannon"].id,}
@@ -40,14 +41,41 @@ end
 	return true
  end
  
+ local projs = {}
+ function gadget:GameFrame (f)	
+ 	for v,k in pairs (projs) do	
+		local d = f % 30 
+		if d > 20 then
+		Spring.SetProjectileCEG (v, "tpeletricblueexplosion2")		
+		elseif d > 10 then
+		Spring.SetProjectileCEG (v, "tpturretorangehit")	
+		else
+		Spring.SetProjectileCEG (v, "blacksmoke")
+		end
+	end
+end
  
---[[
+function gadget: ProjectileDestroyed(proID)
+	projs[proID] = nil
+end
+ 
+
  function gadget:ProjectileCreated(proID, proOwnerID)
 Spring.Echo ("proID="..proID)
 Spring.Echo ("proOwnerID="..proOwnerID)
 Spring.Echo ("proName="..(Spring.GetProjectileName (proID) or "nil!"))
-
+projs[proID] = true
 --if not Spring.GetProjectileType proID then --nil=its a exploded piece
 --do something
+--SendToUnsynced("MyEvent")
 end
---]]
+
+else
+
+---unsynced
+
+function gadget:Initialize()
+	gadgetHandler:AddSyncAction("MyEvent", MyEvent)
+end
+
+end

@@ -68,10 +68,12 @@ function script.StopMoving()
 	StopSpin (wheel5,x_axis, 3)
 	StopSpin (wheel6,x_axis, 3)
 end
+
 -------------------------
 
 
 function script.Create()
+	Spring.Echo ("taaaaaaaank")
 	--StartThread(blockBuildingAnimation,50)
 	getTogether (300,200)
 	--StartThread (healthRegainedThread)

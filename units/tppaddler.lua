@@ -68,7 +68,21 @@ sfxtypes = {
 	unitguide_goodvs = "Nobody knows yet",
 	unitguide_weakvs = "Nobody knows yet",
 	unitguide_protip = "blub blub",
-	}, 
+	},
+	
+  sounds = {
+	  select = {
+		{file="freesound/qubodup/169741_comein.wav", volume=6.0,},
+		{file="freesound/qubodup/169741_hereiam.wav", volume=6.0,},
+		{file="freesound/qubodup/169741_what.wav", volume=6.0,},
+		{file="freesound/qubodup/169741_ready.wav", volume=6.0,},
+		},
+	  ok = {
+		{file="freesound/qubodup/169741_affirmative.wav", volume=6.0,},
+		{file="freesound/qubodup/169741_OnMyWay.wav", volume=6.0,},
+		{file="freesound/qubodup/169741_ComeIn.wav", volume=6.0,},
+		},
+	},	
 
 }
 

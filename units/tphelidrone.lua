@@ -23,7 +23,6 @@
 	  canstop             = [[1]],
 	  category            = [[AIR]],
 	  collide             = true,
-	  corpse              = [[DEAD]],
       cruiseAlt           = 150,
           reclaimable         = false,
 	collision = true,

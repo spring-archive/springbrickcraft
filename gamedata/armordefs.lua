@@ -43,7 +43,7 @@ default = {
 	"tpstealthy",
 },
 
-Minerals = {
+minerals = {
 	"tpkristall",
 	"tpkristall2",
 	"tptetra",

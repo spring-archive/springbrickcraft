@@ -107,7 +107,7 @@ local function wiggleThread()
 	local groundHeight = Spring.GetGroundHeight (x,z)
 	for m = 1, 10 do
 		for i=1,6 do			
-			Turn (legs[i], z_axis, math.random(-1,1)*legA, legS)
+			TurnBy (legs[i], z_axis, math.random(-1,1)*legA, legS)
 		end	
 		Spring.SpawnCEG ("tpdirtdigging", x,groundHeight,z)
 		Sleep (100)

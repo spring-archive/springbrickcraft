@@ -25,7 +25,6 @@
 	  canstop             = [[1]],
 	  category            = [[AIR]],
 	  collide             = true,
-	  corpse              = [[DEAD]],
       cruiseAlt           = 150, --200
           reclaimable         = false,
 	collision = true,

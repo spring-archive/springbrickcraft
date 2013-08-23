@@ -1,3 +1,7 @@
+--works in 91 not in 94:                Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -666) ----!!! -2
+
+
+
 --problem: tptetra unit remains and blocks shots / small units can hide in its colvol. and blob shadows draws shadow
 --fixed by making colvol of tptetra very small. but now it is harder to click on them with miners
 
@@ -11,7 +15,7 @@ function gadget:GetInfo()
     author    = "knorke, mineral los handling by google frog",
     date      = "4 Okt 2010",
     license   = "oh",
-    layer     = 0,
+    layer     = 1000,
     enabled   = true  --  loaded by default	
   }
 end
@@ -31,7 +35,7 @@ local resourcesUnit = {}
 local debug = false
 function DoNotWantEchoSpam ()
 end
-Spring.Echo = DoNotWantEchoSpam
+--Spring.Echo = DoNotWantEchoSpam
 -----config-----
 local fake_unit = "fakeunit"
 local fake_block_unit = "fakeblockunit"
@@ -119,7 +123,7 @@ function gadget:UnitEnteredLos(unitID, unitTeam, allyTeam, unitDefID)
         if Spring.ValidUnitID(resID) and select(1, Spring.GetUnitHealth(resID)) ~= res.health then
             if res.health then
                 --Spring.AddUnitDamage(resID, select(1, Spring.GetUnitHealth(resID)) - res.health)				
-                Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)
+                Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2) ----!!! -2
 				--Spring.SetUnitHealth(resID, res.health)
             else
                 Spring.DestroyUnit(resID)
@@ -148,8 +152,8 @@ local function damageResource(resourceID, damage)
             if los and los.los then
                 if res.health then
                     --Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health)
-                    Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)
-					
+                    Spring.Echo ("Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)")
+					Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2) -- -2 ---!!!					
 					--Spring.SetUnitHealth(unitID, res.health)
                 else
                     Spring.DestroyUnit(unitID)
@@ -204,11 +208,13 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDef
 end
 
 
-function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam) 	
+--function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponID, attackerID, attackerDefID, attackerTeam) -- pre 94: different paramter order because no projectileID
+function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam) 		
+
 	--try to fix: minerals get damaged by units but look unharmed until they get mined: then they suddendly lose all pieces
 	--das passiert aber weil script.hitbyweapon for unitpredamaged aufgerufen wird (?)
-	Spring.Echo (unitID.."attacked by " .. (attackerID or "nil"))
-	Spring.Echo ("attacked unit is a "  .. UnitDefs[Spring.GetUnitDefID(unitID)].name .. " of team " .. unitTeam)
+	--Spring.Echo (unitID.."attacked by " .. (attackerID or "nil"))
+	--Spring.Echo ("attacked unit is a "  .. UnitDefs[Spring.GetUnitDefID(unitID)].name .. " of team " .. unitTeam)
 	
 	
 	if (unitDefID == fake_unit_DefID or unitDefID == fake_block_unit_DefID) and (attackerID ~=unitID) then return 0,0 end
@@ -253,6 +259,7 @@ function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, 
 		if (unitID == attackerID) then
 			return 0,0
 		end
+		Spring.Echo ("damageResource(resourcesUnit[unitID], 10)") --called in 91 not called in 94
         damageResource(resourcesUnit[unitID], 10)
 		--tell the mineral it was indeed mined so it can lose pieces:
 		--env = Spring.UnitScript.GetScriptEnv(unitID)

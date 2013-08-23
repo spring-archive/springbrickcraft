@@ -18,7 +18,6 @@
 	  canPatrol           = true,
 	  canstop             = [[1]],
 	  category            = [[VEHICLE LAND]],
-	  corpse              = "f_cubedebris_s",
       reclaimable         = false,
 	  --HITBOX--
 	  --collisionVolumeTest       =  1,	
@@ -112,7 +111,7 @@
 		  impactOnly			  = true,--nix
 	      damage                  = {
 		Normal = 75,  --60 --30 --40
-		default = 75,
+		--default = 75,
 	      },
 	
 	      model                   = [[projmissle.s3o]], -- [[bantimechmissile.s3o]],

@@ -21,14 +21,15 @@ local weaponDef = {
 		  craterMult              = 0,
 		  TrajectoryHeight		  = 3,
 		  --apperance
-		  model                   = [[projmissle.s3o]],
+		  model                   = [[tailfinbombproj.s3o]],
 		  rgbColor                = [[1 0.95 0.4]],		  	      
           size                    = 6,
 	      stages                  = 20,
 		  separation              = 1,
 		  start					  =1,
-		  CegTag				 = "tpshocktrail",
+		  CegTag				 = "tpfiretrail",
 		  alwaysVisible			= true,
+		  explosionGenerator      = [[custom:tpfireexplosion]],
 		  }
 		
 return lowerkeys({[weaponName] = weaponDef})

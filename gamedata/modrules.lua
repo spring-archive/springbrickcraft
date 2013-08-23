@@ -2,6 +2,12 @@ Spring.Echo ("modrules!")
 
 return {
 
+
+--system = {
+	--pathFinderSystem = 1, --1=qftpqfasfsp (for test)
+--},
+
+
 movement = {
   allowGroundUnitGravity=true,
   allowUnitCollisionDamage=false,
@@ -29,6 +35,7 @@ experience = {
     transportHover  = 1;   -- defaults to 0
     transportShip   = 1;  -- defaults to 0
     transportAir    = 1;  -- defaults to 0
+	targetableTransportedUnits = true,
   },
   
     featureLOS = {
