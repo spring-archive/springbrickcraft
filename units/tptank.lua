@@ -50,7 +50,8 @@
 	  minCloakDistance    = 75,
 	  movementClass       = [[Vehicle4x4]],
 	  crushStrength 	  = 100,
-	  moveState           = 0,
+	  moveState           = 3,
+	  fireState = 2,
 	  noAutoFire          = false,
 	  noChaseCategory     = [[MINERALS]],
 	  objectName          = [[cubetank.s3o]],
@@ -77,7 +78,7 @@
 		{file="freesound/alphahog/46011_systems-online.wav",volume=8.0},
 		},
 	      ok = {
-		{file="freesound/idensai-I/rocknroll.wav", volume=6.0,},
+		{file="freesound/idensai-I/rocknroll.wav", volume=2.0,},
 		},
 	  },
 

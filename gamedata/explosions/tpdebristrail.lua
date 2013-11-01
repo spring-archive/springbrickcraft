@@ -1,7 +1,7 @@
---trail of fire oho
+--based on tpbulletsmoketrail
 return {
-  ["tpfiretrail"] = {
-    fireball1 = {
+  ["tpdebristrail"] = {
+    smoke = {
       air                = true,
       class              = [[CSimpleParticleSystem]],
       count              = 1,
@@ -11,24 +11,24 @@ return {
       water              = true,
 	  alwaysVisible			= true,
       properties = {
-        airdrag            = 0.98,
-        colormap           = [[0.8 0.8 1 0.8  0.8 0.8 0.8 0.4  0.5 0.5 0.5 0]],
+        airdrag            = 0.9,
+        colormap           = [[1 1 1 1  1 1 1 0.5]],
         directional        = true,
-        emitrot            = 0,
+        emitrot            = 90,
         emitrotspread      = 0,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 0, 0]],
+        gravity            = [[0, -0.1, 0]],
         numparticles       = 1,
-        particlelife       = 20, 
-        particlelifespread = 5,
-        particlesize       = 6,
-        particlesizespread = 0,
-        particlespeed      = 0.1,
-        particlespeedspread = 3,
+        particlelife       = 2, 
+        particlelifespread = 30,
+        particlesize       = 2,
+        particlesizespread = 6,
+        particlespeed      = 1,
+        particlespeedspread = 0,
         pos                = [[0, 0, 0]],
-        sizegrowth         = -0.2,
+        sizegrowth         = -0.1,
         sizemod            = 1,
-        texture            = [[firecircle2]],
+        texture            = [[blurring]],
       },
     },
   },

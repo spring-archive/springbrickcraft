@@ -9,10 +9,13 @@ local blownpieces = {}
 ------react to enemy fire-----
 function script.HitByWeapon (x, z, weaponDefID, damage)	
 	if weaponDefID == -5 then return 0 end	--no water damage
-	if (notifyDamaged) then damaged (damage) end
+	if weaponDefID == -1 then Spring.Echo ("dmg=5 now") damage=5 end	
 	--Spring.Echo ("getroffen!")
 	blowdamage = blowdamage + damage
-	if (blowdamage < blowstepdamage) then return damage end	
+	if (blowdamage < blowstepdamage) then 
+		if (notifyDamaged) then damaged (damage) end
+		return damage 
+	end	
 	blownnumber = math.ceil(damage / blowstepdamage)	
 	for i = 1, blownnumber , 1 do
 		if (table.getn(unblownpieces) > 0) then
@@ -28,7 +31,8 @@ function script.HitByWeapon (x, z, weaponDefID, damage)
 				blowdamage = 0 
 			end
 		end
-	end	
+	end
+	if (notifyDamaged) then damaged (damage) end
 	return damage
 end
 ------------------------------
@@ -224,4 +228,16 @@ function CEGAtPiece (effectName, pieceNumber)
    local x,y,z = Spring.GetUnitPiecePosDir (unitID, pieceNumber)
    --local dx,dy,dz = Spring.GetUnitPieceDirection (unitID, pieceNumber)
    Spring.SpawnCEG (effectName, x,y,z)--, dx, dy, dz)
+end
+
+
+function flashRandomPiece (duration)
+	local flashID = math.random(table.getn(unblownpieces))
+	local flash = unblownpieces [flashID]
+	for i=1,duration,1 do
+		Hide (flash)
+		Sleep (50)
+		Show (flash)
+		Sleep (50)
+	end
 end

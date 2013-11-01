@@ -132,38 +132,37 @@ end
 
 -------------------version 1
 function script.QueryWeapon2() return flare end
-function script.AimWeapon2( heading, pitch )
-	--Spring.Echo ("AimWeapon2")	
+function script.QueryWeapon1() return flare end
+function script.AimWeapon1( heading, pitch )
+	Spring.Echo ("aim 1")
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
 	Turn(base, y_axis, heading, math.rad(900))--360	
 	Turn(arm_r, x_axis, -pitch-math.rad(90), math.rad(900))
 	WaitForTurn(base, y_axis)
 	WaitForTurn(arm_r, x_axis)
-	StartThread(RestoreAfterDelay)
+	StartThread(RestoreAfterDelay)	
 	return true
 end
-function script.Shot1()
-	Spring.SetUnitWeaponState (unitID,1,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
-	Spring.SetUnitWeaponState (unitID,2,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
-end
 function script.Shot2()
-	Spring.SetUnitWeaponState (unitID,1,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
 	Spring.SetUnitWeaponState (unitID,2,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
+	Spring.SetUnitWeaponState (unitID,1,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
+end
+function script.Shot1()
+	Spring.SetUnitWeaponState (unitID,2,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
+	Spring.SetUnitWeaponState (unitID,1,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
 end
 
 
-function script.AimFromWeapon1() return flare end --base--head
-function script.AimWeapon1( heading, pitch )
-	--Spring.Echo ("AimWeapon1")
+function script.AimFromWeapon2() return flare end --base--head
+function script.AimWeapon2( heading, pitch )
+	Spring.Echo ("Aim 2")
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
 	Turn(base, y_axis, heading, math.rad(900))--360
 	Turn(arm_r, x_axis, -pitch-math.rad(90), math.rad(900))
 	WaitForTurn(base, y_axis)
-	WaitForTurn(arm_r, x_axis)	
-	Spring.SetUnitWeaponState (unitID,1,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
-	Spring.SetUnitWeaponState (unitID,2,"reloadState",(1.3*30)+Spring.GetGameFrame()) --1.3=reloadtime***
+	WaitForTurn(arm_r, x_axis)
 	StartThread(RestoreAfterDelay)
 	return true
 end

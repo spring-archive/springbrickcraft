@@ -78,6 +78,16 @@ local moveDefs = {
 		slopemod = 0,
 		crushstrength = 100,
 	},
+	
+	Hover3x3 = {
+		footprintX = 3,
+		footprintz = 3,
+		maxWaterDepth = 5000,
+		maxSlope = vehicle_maxslope,
+		crushStrength = 100,
+		hover = true,
+	},
+	
 }
 	
 	--------------------------------------------------------------------------------

@@ -47,18 +47,18 @@ return {
         --emitrot            = 90,
         emitrotspread      = 20,
         emitvector         = [[0, 1, 0]],
-        gravity            = [[0, 0.1, 0]],
+        gravity            = [[0, -0.1, 0]],
         numparticles       = 1,
         particlelife       = 20,
         particlelifespread = 20,
-        particlesize       = 5,	--negative side: turn the texture upside down
+        particlesize       = 5,	--negative size: turn the texture upside down
         particlesizespread = 2,
         particlespeed      =  20,
         particlespeedspread = 0,
         pos                = [[0, 20, 0]],
         sizegrowth         = 0,--0
         sizemod            = 1.0,
-        texture            = [[cartoonexplo_zap]],
+        texture            = [[splatter]],
       },
     },  
 	----	

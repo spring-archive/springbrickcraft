@@ -10,10 +10,11 @@ local drill = WeaponDefNames["tpgripper_drill"].id
 
 ------react to enemy fire-----
 function script.HitByWeapon (x, z, weaponDefID, damage)	
-	Spring.Echo ("drill:" .. drill .. "  weaponDefID:" .. weaponDefID .. "damage"..damage)
-	if weaponDefID ~= drill then Spring.Echo ("return line14") return 0 end --and weaponDefID~= -2 HÄ=-2 was used in gadget AddUnitDamage (...weapondefid=-2)
+	--Spring.Echo ("drill:" .. drill .. "  weaponDefID:" .. weaponDefID .. "damage"..damage)
+	if weaponDefID ~= drill then damage= 0 end --and weaponDefID~= -2 HÄ=-2 was used in gadget AddUnitDamage (...weapondefid=-2)
 	if weaponDefID == -5 then return 0 end	--no water damage
-Spring.Echo ("getroffen!")
+	if weaponDefID == -1 then return 0 end --debris
+Spring.Echo ("angesammelt!" .. damage )
 	blowdamage = blowdamage + damage
 	if (blowdamage < blowstepdamage) then return damage end	
 	blownnumber = math.ceil(damage / blowstepdamage)	
@@ -131,7 +132,7 @@ end
 
 ---repair---
 function healthRegained (heal)
-	Spring.Echo ("healthRegained " .. heal)
+	--Spring.Echo ("healthRegained " .. heal)
 	local grownumber = math.ceil(heal / blowstepdamage)	
 	for i = 1, grownumber , 1 do
 		if (table.getn(blownpieces) > 0) then

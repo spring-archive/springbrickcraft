@@ -86,12 +86,12 @@ unitDef = {
   weapons             = {
 	{
 	def                = [[RocketLauncherTrack]],
-	badTargetCategory  = [[MINERALS AIR]],
+	badTargetCategory  = [[AIR]],
 	onlyTargetCategory = [[VEHICLE AIR BUILDING]] ,
 	},
 	{
 	def                = [[RocketLauncherNoTrack]],
-	badTargetCategory  = [[MINERALS AIR BIO]],
+	badTargetCategory  = [[AIR BIO]],
 	onlyTargetCategory = [[BIO]] ,
 	},
 

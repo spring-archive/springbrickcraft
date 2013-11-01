@@ -3,7 +3,7 @@ return {
   ["tpfireexplosion"] = {
     dust = {
 	  unit				 = true,
-	  water				 = true,
+	  water				 = false,
       air                = true,
       class              = [[CSimpleParticleSystem]],
       ground             = true,
@@ -30,6 +30,37 @@ return {
         texture            = [[firecircle]],
       },
     },
+	
+	waterhit = {
+	  unit				 = false,
+	  water				 = true,
+      air                = true,
+      class              = [[CSimpleParticleSystem]],
+      ground             = false,
+      count              = 3, --5
+      properties = {
+        airdrag            = .99,
+        colormap           = [[0.2 0.5 0.5 0.6  0 0 0.2 0]],
+		--colormap           = [[0.9 0.5 0.5 1  0.3 0 0 0]],
+        directional        = true,
+        emitrot            = 0,
+        emitrotspread      = 40,
+        emitvector         = [[0, 1, 0]],
+        gravity            = [[0, -0.5, 0]],
+        numparticles       = 5,
+        particlelife       = 10,
+        particlelifespread = 10,
+        particlesize       = 7,
+        particlesizespread = 3,
+        particlespeed      = 4,
+        particlespeedspread = 1,
+        size               = 0.1, --0.2
+        sizegrowth         = 0.2,
+        sizemod            = 1,
+        texture            = [[greyblob]],
+      },
+    },
+	
     drops = {
       air                = true,
       class              = [[CSimpleParticleSystem]],

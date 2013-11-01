@@ -108,6 +108,7 @@
 	      dance                   = 2,
 	      wobble                  = 2,
 	      explosionGenerator      = [[custom:tpbulletimpact]],
+		  cegTag				  = "tpbulletsmoketrail",
 	      flightTime              = 1,
 		burnBlow			= true,
 	      interceptedByShieldType = 1,
@@ -117,8 +118,8 @@
 	      reloadtime              = 0.17, --0.35
 	      smokeTrail              = false,
 --	      soundHit                = [[argh/Argh_LargeExplosion]],
-	      soundStart              = [[tpgatlingkanobaremix.ogg]],
-	      tolerance               = 8000,
+	      soundStart              = [[tpgatlingkanobaremix_softer.wav]],	      
+		  tolerance               = 8000,
 	      tracks                  = false,
 	      turret                  = true,
 	      weaponType              = [[MissileLauncher]],

@@ -28,6 +28,7 @@ function gadget:UnitDamaged(unitID, unitDefID, unitTeam, damage, paralyzer, weap
 			local nearUnits = Spring.GetUnitsInCylinder (x,z, 500, unitTeam)	--				
 			--if (damage > 5 and nearUnits) then
 				for i in pairs (nearUnits) do
+					if (i > 2) then break end
 					if (nearUnits[i]~=unitID) then
 						Spring.AddUnitDamage (nearUnits[i], damage/2, 0, attackerID, -1) --weaponID for recursive
 						local tx,ty,tz = Spring.GetUnitPosition(nearUnits[i])

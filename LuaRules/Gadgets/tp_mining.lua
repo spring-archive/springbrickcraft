@@ -152,7 +152,7 @@ local function damageResource(resourceID, damage)
             if los and los.los then
                 if res.health then
                     --Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health)
-                    Spring.Echo ("Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)")
+                    --Spring.Echo ("Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2)")
 					Spring.AddUnitDamage(unitID, select(1, Spring.GetUnitHealth(unitID)) - res.health,0, unitID, -2) -- -2 ---!!!					
 					--Spring.SetUnitHealth(unitID, res.health)
                 else
@@ -218,7 +218,7 @@ function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, 
 	
 	
 	if (unitDefID == fake_unit_DefID or unitDefID == fake_block_unit_DefID) and (attackerID ~=unitID) then return 0,0 end
-	--if (is_resource_type (unitDefID) and not is_miner(attackerID)) and weaponID~=-100 then return 0,0 end	--other units can not damage minerals
+	if (is_resource_type (unitDefID) and not is_miner(attackerID) and unitID~=attackerID) then return 0,0 end	--other units can not damage minerals. unitID~=attackerID because AddUnitDamage uses attackerID=unitID in damageresource() and that should not be blocked
 	--test
 	
 	if (is_resource_type (unitDefID) and is_miner(attackerID)) then
@@ -259,7 +259,7 @@ function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, 
 		if (unitID == attackerID) then
 			return 0,0
 		end
-		Spring.Echo ("damageResource(resourcesUnit[unitID], 10)") --called in 91 not called in 94
+		--Spring.Echo ("damageResource(resourcesUnit[unitID], 10)") --called in 91 not called in 94
         damageResource(resourcesUnit[unitID], 10)
 		--tell the mineral it was indeed mined so it can lose pieces:
 		--env = Spring.UnitScript.GetScriptEnv(unitID)

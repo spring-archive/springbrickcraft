@@ -117,11 +117,12 @@ end
 function script.Killed(recentDamage, maxHealth)
 	--der fahrer hängt sonst im wreck?
 	--return 0
+	Spring.Echo ("tank killed")
 end
 
 function damaged (damage)
 	if (damage or 0) > 100 then
-		getTogether (10,10)
+		getTogether (30,10)--20
 	end
 	StartThread (damageSmoke, "blacksmoke", "tpdamagefire_s")
 end

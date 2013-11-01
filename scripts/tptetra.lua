@@ -13,7 +13,7 @@ healthmulti=1--0.87
 
 --script.hitbyweapon gets called before unitpredamaged: minerals would lose pieces when being hit by units but not lose health
 --so tpdamagepieces.lua can not be used
-include "tpdamagepieces_tetra.lua"
+include "tpdamagepieces.lua"--_tetra.lua"
 
 function script.Create()	
 	--Turn (base, y_axis, math.rad (math.random(0,360)))

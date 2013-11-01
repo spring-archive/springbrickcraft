@@ -43,7 +43,8 @@ end
  
  local projs = {}
  function gadget:GameFrame (f)	
- 	for v,k in pairs (projs) do	
+ 	--funny test of projectiles that get different cegtags during their flight
+	for v,k in pairs (projs) do	
 		local d = f % 30 
 		if d > 20 then
 		Spring.SetProjectileCEG (v, "tpeletricblueexplosion2")		
@@ -61,10 +62,10 @@ end
  
 
  function gadget:ProjectileCreated(proID, proOwnerID)
-Spring.Echo ("proID="..proID)
-Spring.Echo ("proOwnerID="..proOwnerID)
-Spring.Echo ("proName="..(Spring.GetProjectileName (proID) or "nil!"))
-projs[proID] = true
+--Spring.Echo ("proID="..proID)
+--Spring.Echo ("proOwnerID="..proOwnerID)
+--Spring.Echo ("proName="..(Spring.GetProjectileName (proID) or "nil!"))
+--projs[proID] = true
 --if not Spring.GetProjectileType proID then --nil=its a exploded piece
 --do something
 --SendToUnsynced("MyEvent")

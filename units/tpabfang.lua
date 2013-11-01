@@ -87,6 +87,7 @@ bombs = {
 		  startSmoke			  =1,
 		  AvoidFeature		    = false,
 		  AvoidFriendly = false,
+		  AvoidNeutral = false,
 		  --bouncing
 		  --NumBounce				  = 8,
 		  --groundbounce			  = true,

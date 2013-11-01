@@ -41,6 +41,8 @@ default = {
 	"tphq_small",
 	"tpabfang",
 	"tpstealthy",
+	
+	"tpshovermouse",
 },
 
 minerals = {

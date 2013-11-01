@@ -63,9 +63,9 @@ unitsAmountGlobal = {}	--[i]=amount   wird gebraucht um zu gucken ob es mindest 
 local wPos = {x=0.01, y=0.5}
 
 function widget:Initialize ()
-	if (not Spring.IsReplay() and not Spring.GetSpectatingState ()) then		
-		widgetHandler:RemoveWidget()
-	end
+	--if (not Spring.IsReplay() and not Spring.GetSpectatingState ()) then		
+		--widgetHandler:RemoveWidget()
+	--end
 	buildTeamNames ()
 	makeStats ()
 	--printStats ()
@@ -94,15 +94,13 @@ function teamIDToPlayername (teamID)
 	local _, uplayer, _, isAiTeam = Spring.GetTeamInfo(teamID)
 	local playername = "unknown playername"
 	if (isAiTeam == true) then
-		local _, skirmishAIID, name, hostingPlayerID, shortName, version = Spring.GetAIInfo(teamID)  --Spring.GetAIInfo(uplayer) 
-		--playername = "BOT_" .. name .. skirmishAIID .."_"..shortName ..hostingPlayerID
-		playername = "(AI)" .. skirmishAIID
+		local skirmishAIID, name, hostingPlayerID, shortName, version = Spring.GetAIInfo(teamID)  --Spring.GetAIInfo(uplayer) 
+		--playername = "(AI)" .. name .. "--"..shortName.."--"..version.. " hosted by " .. Spring.GetPlayerInfo(hostingPlayerID)
+		playername = "(AI)" .. name
 	end
 	if (isAiTeam == false) then playername = Spring.GetPlayerInfo(uplayer) or 'GetPlayerInfo fail' end
-	local active,_,spec = Spring.GetPlayerInfo(uplayer)
+	--local active,_,spec = Spring.GetPlayerInfo(uplayer)
 	--if (spec == true) then playername = "#SPEC#" end
-	--Spring.Echo ("<PLAYER0> did something")
-	--Spring.SendMessage ("<PLAYER0>")
 	return playername
 end
 

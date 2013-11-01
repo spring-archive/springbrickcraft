@@ -48,7 +48,7 @@ local gunflash = SFX.CEG
 
 -------DRIVING-----
 function script.StartMoving()
-	Spring.Echo ("StartMoving jeep " .. Spring.GetGameFrame ())
+	--Spring.Echo ("StartMoving jeep " .. Spring.GetGameFrame ())
 --	StartThread(drive)
 	Spin(wheel1, x_axis, 7) Spin(wheel1b, x_axis, 7)
 	Spin(wheel2, x_axis, 7) Spin(wheel2b, x_axis, 7)
@@ -58,7 +58,7 @@ function script.StartMoving()
 end
 
 function script.StopMoving()
-	Spring.Echo ("StopMoving jeep" .. Spring.GetGameFrame ())
+	--Spring.Echo ("StopMoving jeep" .. Spring.GetGameFrame ())
 
 --	StartThread(stopdrive)
 	StopSpin (wheel1,x_axis, 3) StopSpin (wheel1b,x_axis, 3)
@@ -138,7 +138,7 @@ end
 --end
 
 function script.Create()
-Spring.Echo ("jeeeeeep")
+--Spring.Echo ("jeeeeeep")
 	--local p = Spring.GetUnitPieceMap (unitID)
 		
 	--Spring.Echo ("p= " .. (p["weaponcenter"] or "nil"))
@@ -163,7 +163,7 @@ Spring.Echo ("jeeeeeep")
 		--Spring.UnitScript.Hide (wheel2)
 		--Spring.UnitScript.Hide (wheel3)
 		--Spring.UnitScript.Hide (wheel4)
-	--getTogether (300,200)
+	--getTogether (300,200)	
 end
 
 function setSpeed ()

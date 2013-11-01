@@ -19,7 +19,7 @@ function script.Create()
 	blockBuildingAnimation(-75)
 	StopSpin (base, y_axis)
 	Turn (base, y_axis, 0, math.rad (900))
-	Spring.SetUnitBlocking (unitID, false,false,false) --TEST
+	--Spring.SetUnitBlocking (unitID, false,false) --TEST
 end
 
 function script.Killed(recentDamage, maxHealth)

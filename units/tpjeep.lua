@@ -47,7 +47,7 @@ unitDef = {
   maxDAMAGE           = 300,
   maxSlope            = 45, --18
   maxVelocity         = 5.5, --20, --(was 5) script sets it lower so upgrade can increase it again http://springrts.com/mantis/view.php?id=2877
-  maxReverseVelocity  = 5.5, --TEST
+  maxReverseVelocity  = 1.5, --TEST
   maxWaterDepth       = 22,
   minCloakDistance    = 75,
   movementClass       = [[Vehicle3x3]],
@@ -62,9 +62,9 @@ unitDef = {
   sounds			= {
 	  select = {
 	{file="freesound/acclivity/muststayonpath.wav",volume=6.0},
-	{file="freesound/104432_wrongnumber.wav",volume=6.0},
-	{file="freesound/104432_thisis912.wav",volume=6.0},
-	{file="freesound/alphahog/46852_get-in-the-car.wav",volume=8.0},
+	{file="freesound/104432_wrongnumber.wav",volume=5.0},
+	{file="freesound/104432_thisis912.wav",volume=5.0},
+	{file="freesound/alphahog/46852_get-in-the-car.wav",volume=10.0},
 	},
 	  ok = {
 	{file="samples/loslos.wav",volume=6.0},

@@ -7,6 +7,7 @@ local ma = x_axis
 local moved = 60
 
 ---------------------------
+notifyDamaged = true
 pieces = {}
 exploType = SFX.SHATTER
 for i=1,27 do
@@ -113,4 +114,8 @@ function createAnim ()
 		--Turn (p, a, 0, math.rad(50))
 		Show (p)
 	end
+end
+
+function damaged (d)
+	if (d > 60) then StartThread (flashRandomPiece, 5) end
 end

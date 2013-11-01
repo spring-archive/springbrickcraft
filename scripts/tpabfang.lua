@@ -20,7 +20,13 @@ function script.Create()
 	Spin (rotor, y_axis, math.rad (720))
 	Turn (base, x_axis, math.rad(180))
 	StartThread (engineSmoke)
-	Turn (base, x_axis, -math.rad(90),math.rad(60))		
+	Turn (base, x_axis, -math.rad(90),math.rad(60))
+	StartThread (selfkill)	--selfdestruct when having reached target in decent time
+end
+
+function selfkill ()
+	Sleep (10000)
+	Spring.DestroyUnit (unitID)
 end
 
 function engineSmoke ()

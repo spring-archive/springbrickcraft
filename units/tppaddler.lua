@@ -34,7 +34,7 @@ TurnRate = 600,
 
 sightDistance = 700,
 
-mass = 9,
+mass = 50,--9?
 
 Builder = false,
 CanAttack = true,
@@ -62,6 +62,11 @@ sfxtypes = {
 	"custom:whitesmoke",
 	"custom:tpmuzzleflash",
 		},
+	pieceExplosionGenerators =
+		{
+		"tpdebristrail",
+		},		
+	
 	},
 	customParams = {	
 	unitguide_text = "blablablablablablabla", --no subtables in customParams? meh.
