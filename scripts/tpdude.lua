@@ -69,7 +69,7 @@ end
 -------------------------
 
 function script.Create()
-	Spring.SetUnitBlocking (unitID, true, true, true) --crushable!
+	Spring.SetUnitBlocking (unitID, true, true, nil,nil, true) --crushable!
 	StartThread (idleAnimation)
 end
 
@@ -119,6 +119,6 @@ function idleAnimation ()
 		Turn (head, y_axis, math.rad (math.random(-45,45)), math.rad (90))
 		WaitForTurn (head, y_axis)
 		Sleep (100)
-		Turn (head, y_axis, 0, math.rad (180))		
+		Turn (head, y_axis, 0, math.rad (180))
 	end
 end

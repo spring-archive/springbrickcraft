@@ -1,4 +1,4 @@
--MINERALS with 10 hp left are invisible!
+-MINERALS with 10 hp left are invisible! - fixed
 
 -resuming buildings bug - fixed in 84.0, still a bit gay: baut er auch mal was zu ende?
 

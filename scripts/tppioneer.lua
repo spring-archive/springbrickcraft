@@ -32,6 +32,8 @@ include "tpdamagepieces.lua"
 
 --signals
 local SIG_AIM = 2
+local SIGwaterBubble = 4
+local inWater = false
 --local isMoving = false
 local beam = SFX.CEG
 
@@ -49,10 +51,38 @@ function script.StopMoving()
 	if (unitFinished) then
 		StopSpin (wheel1,x_axis, 3)
 		StopSpin (wheel2,x_axis, 3)
-		if (math.random (1,10) < 5) then a = math.rad(20) else a = math.rad(-20) end
-		Turn (base, x_axis, a, math.rad(180))
+		if (not inWater) then
+			if (math.random (1,10) < 5) then a = math.rad(20) else a = math.rad(-20) end
+			Turn (base, x_axis, a, math.rad(180))
+		end
 	end	
 end
+
+function script.setSFXoccupy (curTerrainType) --4=land, 2=water
+	if curTerrainType==2 then 
+		inWater=true 
+		StartThread(waterBubble) 
+		Spring.SetUnitLeaveTracks (unitID, false)
+	end
+	if curTerrainType==4 then 
+		inWater=false 
+		Signal(SIGwaterBubble)
+		Spring.SetUnitLeaveTracks (unitID, true)
+	end
+	Spring.Echo (curTerrainType)
+end
+
+function waterBubble()
+	Signal(SIGwaterBubble)
+	SetSignalMask(SIGwaterBubble)		
+	while (true) do
+		EmitSfx( arm1, SFX.WAKE )
+		Sleep (50)
+		EmitSfx( arm3, SFX.WAKE )
+		Sleep (50)
+	end
+end
+
 
 function script.Create()
 	--getTogether (300,200)

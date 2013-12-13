@@ -93,6 +93,17 @@ LeaveTracks = false,
 	    },
 		},
 
+  sounds = {
+	  select = {
+	{file="freesound/racerobot/196845_autopilot.wav",volume=4.0},
+	},
+	  ok = {
+	{file="freesound/racerobot/196847_collision-course.wav",volume=4.0},
+	{file="freesound/racerobot/196863_full-speed.wav",volume=4.0},
+	{file="freesound/racerobot/196886_engage.wav",volume=4.0},
+	},
+  },
+		
 
 }
 

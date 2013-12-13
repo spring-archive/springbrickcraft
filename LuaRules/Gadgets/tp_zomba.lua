@@ -52,7 +52,7 @@ function gadget:UnitFinished(unitID, unitDefID, teamID)
 	finishedUnits[unitID] = true
 end
 
-function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)
+function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID, attackerDefID, attackerTeamID)	
 	if (not finishedUnits[unitID]) then return end
 	local result = nil
 	if (zomba[attackerDefID]) then	

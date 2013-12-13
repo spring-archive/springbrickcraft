@@ -1,7 +1,7 @@
 unitDef = {
-  unitname            = [[tpdude]],
-  name                = [[Cubonaut]],
-  description         = [[Fat Dude with a rifle.]],
+  unitname            = [[tpduck]],
+  name                = [[Duck]],
+  description         = [[A duck]],
   acceleration        = 1, --0.2
   bmcode              = [[1]],
   brakeRate           = 1, --0.5
@@ -15,7 +15,8 @@ unitDef = {
   canMove             = true,
   canPatrol           = true,
   canstop             = [[1]],
-  category            = [[BIO LAND]],  
+  category            = [[BIO LAND]],
+  corpse              = [[DEAD]],
   reclaimable         = false,
   --HITBOX--
   collisionVolumeTest       =  1,
@@ -30,18 +31,17 @@ unitDef = {
   idleAutoHeal        = 0,  
   maneuverleashlength = [[640]],
   mass                = 24,
-  crushResistance = 24,
-  maxDamage           = 50,--75
+  maxDamage           = 10,
   maxSlope            = 45,
-  maxVelocity         = 3,
-  maxReverseVelocity   = 2.5,  ---**** als upgrade
+  maxVelocity         = 1,
+  --maxReverseVelocity   = 2.5,  ---**** als upgrade
   maxWaterDepth       = 22,  
   movementClass       = [[Infantry]],
   --crushStrength 	  = 25,
   moveState           = -1,
   noAutoFire          = false,
   noChaseCategory     = [[MINERALS AIR]],
-  objectName          = [[fatdude.s3o]], --
+  objectName          = [[duck.s3o]], --
   seismicSignature    = 4,
   --selfDestructAs      = [[MEDIUM_UNIT]],
   selfDestructCountdown = 1,
@@ -77,7 +77,7 @@ unitDef = {
   turninplace         = 1,
   turnRate            = 2000,
   workerTime          = 0,
-	  script              = [[tpdude.lua]], -- [[tpdude.lua]],
+	  --script              = [[tpdude.lua]], -- [[tpdude.lua]],
 
   weapons             = {
 	{
@@ -125,8 +125,7 @@ unitDef = {
 	unitguide_goodvs = "Nothing",
 	unitguide_weakvs = "Everything",
 	unitguide_protip = "Build a lot of those",
-	unitdraw = true,
 	},
 }
 
-return lowerkeys({ tpdude = unitDef })
+return lowerkeys({ tpduck = unitDef })

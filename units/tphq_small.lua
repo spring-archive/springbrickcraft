@@ -36,6 +36,7 @@ local unitDef =
 	FootprintX = 7,
 	FootprintZ = 7,
 	MaxSlope = 20,	
+	maxWaterDepth = 1,
 	--YardMap ="ooooo occco occco occco occco",
 --hitbox
 collisionVolumeType = "box",

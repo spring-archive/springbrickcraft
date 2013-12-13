@@ -29,12 +29,12 @@ local moveDefs = {
 		crushstrength = 100,
 	},
 	Vehicle3x3 = {
-		footprintx = 4,
-		footprintz = 4,
+		footprintx = 3,
+		footprintz = 3,
 		maxwaterdepth = 22,
 		maxslope = vehicle_maxslope,
 		slopemod = 0,
-		crushstrength = 100,
+		crushStrength = 1000,
 	},
 	Vehicle4x4 = {
 		footprintx = 4,
@@ -92,7 +92,7 @@ local moveDefs = {
 	
 	--------------------------------------------------------------------------------
 	--------------------------------------------------------------------------------
-	
+
 	-- convert from map format to the expected array format
 	
 	local array = {}
@@ -102,5 +102,5 @@ local moveDefs = {
 	        v.name = k
 	        i = i + 1
 	end	
-	
+
 	return array

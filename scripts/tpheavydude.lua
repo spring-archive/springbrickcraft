@@ -105,7 +105,7 @@ function script.Create()
 	--Spin(head, y_axis, 5)
 	--Spin(arm_r, x_axis, 5)
 	Turn (head, y_axis, math.rad (179))
-	Spring.SetUnitBlocking (unitID, true, true, true) --crushable!
+	Spring.SetUnitBlocking (unitID, true, true, nil,nil, true) --crushable!
 	--Turn (flare, y_axis, math.rad(-90))
 	--Spring.Echo ("heavy dudy")
 end
@@ -134,7 +134,7 @@ end
 function script.QueryWeapon2() return flare end
 function script.QueryWeapon1() return flare end
 function script.AimWeapon1( heading, pitch )
-	Spring.Echo ("aim 1")
+	--Spring.Echo ("aim 1")
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
 	Turn(base, y_axis, heading, math.rad(900))--360	
@@ -156,7 +156,7 @@ end
 
 function script.AimFromWeapon2() return flare end --base--head
 function script.AimWeapon2( heading, pitch )
-	Spring.Echo ("Aim 2")
+	--Spring.Echo ("Aim 2")
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
 	Turn(base, y_axis, heading, math.rad(900))--360

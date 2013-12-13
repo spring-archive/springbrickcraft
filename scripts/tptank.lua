@@ -115,6 +115,7 @@ function script.FireWeapon1()
 end
 
 function script.Killed(recentDamage, maxHealth)
+	Spring.Echo ("script_Killed")
 	--der fahrer hängt sonst im wreck?
 	--return 0
 	Spring.Echo ("tank killed")

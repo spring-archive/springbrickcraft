@@ -55,7 +55,7 @@ NoMineDamage = {
 	"tppioneer",
 	},
 }
-
+--[[
 for categoryName, categoryTable in pairs(armorDefs) do
   local t = {}
   for _, unitName in pairs(categoryTable) do
@@ -63,5 +63,5 @@ for categoryName, categoryTable in pairs(armorDefs) do
   end
   armorDefs[categoryName] = t
 end
-
+--]]
 return armorDefs

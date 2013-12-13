@@ -11,6 +11,7 @@ buildCostMetal = 500,
 buildCostEnergy = 0,
 buildTime = 25,
 mass = 200,
+crushStrength = 200,
 --Health
 maxDamage = 1500,
 idleAutoHeal = 0,
@@ -23,9 +24,10 @@ FootprintZ = 3,
 --MaxSlope = 15,
 MaxVelocity = 5.0,
 --MaxWaterDepth = 20,
-MovementClass = "Vehicle3x3",
+MovementClass = "Hover3x3", --"Vehicle3x3",
+waterline = 10,
 TurnRate = 1200,
-
+floater = true,
 sightDistance = 1000,  --500 --750
 radarDistance = 1300, --radius
 activateWhenBuilt = true,

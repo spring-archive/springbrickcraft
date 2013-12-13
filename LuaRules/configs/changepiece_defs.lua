@@ -3,7 +3,7 @@
 --def format is: unitDefID = {{sourceunitDefID,sourcepieceName,targetpieceName}},
 --
 
+
 return {
-	tpdude = {{"tphubschrauber","rotor1","head"},
-	},
-}
+	tpdude = {"tphubschrauber","rotor1","head"},
+	}

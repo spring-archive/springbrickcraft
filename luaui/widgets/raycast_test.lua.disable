@@ -1,0 +1,224 @@
+function widget:GetInfo()
+  return {
+    name      = "raycast",
+    desc      = "3d lol",
+    author    = "knorke",
+    date      = "dec 1010",
+    license   = "push button magic",
+    layer     = 0,
+    enabled   = true,
+  }
+end
+
+include("keysym.h.lua")
+
+KP0 = 256
+KP1 = 257
+KP2 = 258
+KP3 = 259
+KP4 = 260
+KP5 = 261
+KP6 = 262
+KP7 = 263
+KP8 = 264
+KP9 = 265
+W = 119
+S = 115
+A = 97
+D = 100
+E = 101
+Q = 113
+
+local function glColor (a,b,c,d)
+	gl.Color (math.min (a,1),math.min (b,1),math.min (c,1),math.min (d or 1,1))
+end
+
+map = {}
+map = {
+{1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+{0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,0,1,1,1,1,0,1,0,0,0,0,0,0,0,0,1},
+{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,2,2,2,2,0,0,2,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,6,6,6,6,2,0,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,2,0,0,0,0,0,1,1,1,1,1},
+{1,0,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+{1,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,3,2,3,2,3,2,3,2,3,2,3,1},
+{1,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+{1,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+{1,0,0,0,0,0,0,0,2,0,2,0,0,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},
+{1,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,0,0,0,0,5,5,0,0,0,0,0,0,4,4,3,4,4,0,0,0,0,1},
+{1,0,0,0,0,0,5,5,0,0,0,0,0,0,1,1,0,0,0,0,0,0,3,4,4,4,4,0,0,0,0,1},
+{1,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,0,0,0,0,1},
+{1,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,5,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
+{1,1,1,1,1,2,2,1,1,1,1,3,1,3,3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+}
+  
+  local offX = 300
+local offY = 300
+
+  mapWidth = 32
+  mapHeight = 25
+
+sW = 800
+sH = 600
+  
+  
+  xp = 5
+  yp = 10
+  w = 20
+  wi = 0
+  hi = 0 -- -100
+  
+  color = {}
+  
+color[1] = {[1]=200,[2]=200, [3] = 200}
+color[2] = {[1]=255,[2]=2, [3] = 0}
+color[3] = {[1]=200,[2]=255, [3] = 0}
+color[4] = {[1]=0,[2]=255, [3] = 125}
+color[5] = {[1]=200,[2]=255, [3] = 200}
+color[6] = {[1]=0,[2]=200, [3] = 255}
+ 
+local horinzont = sH/2 + hi
+
+
+function widget:DrawScreen()
+
+glColor (50/255,50/255,50/255,1)	
+gl.Rect(offX, 0, offX +sW, horinzont)
+glColor (50/255,50/255,100/255)	
+gl.Rect (offX, horinzont, offX +sW, sH)
+
+
+	--for y=1,25 do
+		--for x=1,2 do
+--love.graphics.setColor (255,255,255,255)	
+--	love.graphics.print(math.floor(xp+0.5)..":"..math.floor(yp+0.5), 400, 300)
+		--end
+	--end
+	
+	
+
+	
+for x=-sW/2, sW/2, 4 do --For x=-160 To 160 Step 2
+  local f=0
+  --E ist die Entfernung die der Ray hinterlegen muß, bis es auf eine Wand (Dim xy(xx,yy)) trifft.
+  local WTX = math.cos(math.rad(wi+(x/w)))
+  local WTY = math.sin(math.rad(wi+(x/w)))
+  for e=0, 30, 0.1 do --0.05
+   --Nur so lange weiterprüfen wenn der aktuelle Ray noch keine Wand 'getroffen' hat.
+   if f==0 then
+    --Überprüfen ob neue berechnete Position des Ray's auf eine wand trifft.
+    local c = xy(xp+WTX*e, yp+WTY*e)
+	if c~=0 then
+     --Ray hat jetzt eine Wand getroffen. Aufgrund der Entfernung E wird
+     --;jetzt der Farbwerd der Wand an dieser Stelle berechnet.
+     --Color 512/(e+2),1024/(e+4),512/(e+2);255-e*9
+	 ea= math.abs (e)/2
+	 local wc = color[c]
+	 
+	 --love.graphics.setColor (wc[1]/(ea),wc[2]/(ea),wc[3]/(ea))
+     glColor (wc[1]/(ea)/255,wc[2]/(ea)/255,wc[3]/(ea)/255,1)
+	 
+	 --;Die neu berechnete Wand wird entsprechend der Entfernung E in einer berechneten 'größe' dargestellt.
+     --Rect x,hi-100/e,2,200/e
+     
+	 --love.graphics.rectangle( mode, x, y, width, height )
+	 
+	 --love.graphics.rectangle("fill", x+(sW/2), (sH/2)+(hi-(sH/2)/e),  4,sH/e*2) --*2 weg	 
+	 gl.Rect (offX + x+(sW/2), (sH/2)+(hi-(sH/2)/e), offX + x+(sW/2)+4,  (sH/2)+(hi-(sH/2)/e)  +sH/e*2)
+	 
+	 --;Der Ray hat eine Wand getroffen, weitere Berechnungen werden für diesen Ray hiermit unterbunden.
+     f=1
+    end 
+   end 
+  end	
+	
+end
+
+--drawMiniMap (300,400,4)
+
+--crosshair
+local s = 5
+gl.Color (1,1,1,0.5)
+gl.Rect (offX+sW/2-s, sH/2, offX+sW/2+s, sH/2+s)
+
+end
+
+function xy (x,y)
+x= math.floor (x+0.5)
+y= math.floor (y+0.5)
+	if not (x > 0 and x < mapWidth+1) then return 0 end 
+	if not (y > 0 and y < mapHeight+1) then return 0 end
+	return map[y][x]
+end
+
+
+local keys = {}
+
+--dt = 0.05
+function widget:Update(dt)
+--Spring.Echo ("update")
+	if keys[KP8] then 
+		xp=xp+ math.cos(math.rad(wi))*5*dt 
+		yp=yp+ math.sin(math.rad(wi))*5*dt 
+	end
+	if keys[KP2] then 
+		xp=xp- math.cos(math.rad(wi))*5*dt 
+		yp=yp- math.sin(math.rad(wi))*5*dt 
+	end	
+	
+
+	if keys[KP6] then 
+		xp=xp+ math.cos(math.rad(wi+90))*5*dt 
+		yp=yp+ math.sin(math.rad(wi+90))*5*dt 
+	end
+	if keys[KP4] then 
+		xp=xp- math.cos(math.rad(wi+90))*5*dt 
+		yp=yp- math.sin(math.rad(wi+90))*5*dt 
+	end	
+	
+	--if keys["a"] then yp=yp+10*dt end
+	--if keys["d"] then yp=yp-10*dt end
+	if keys[KP9] then wi=wi+100*dt end
+	if keys[KP7] then wi=wi-100*dt end
+	--keys = {}
+	--keys = {}
+	
+	--if keys["t"] then w=w+4 keys["t"]=nil end
+	--if keys["g"] then w=w-4 keys["g"]=nil end
+	
+end
+
+function drawMiniMap (miniMapOffsetX, miniMapOffsetY, miniMapScale)
+	for y=1,mapHeight do
+		for x=1,mapWidth do			
+			if map[y][x] ~= 0 then
+			local c =color[map[y][x]]				
+				glColor(c[1]/255,c[2]/255,c[3]/255, 1)
+				gl.Rect(x * miniMapScale + miniMapOffsetX, y * miniMapScale + miniMapOffsetY, miniMapScale, miniMapScale)
+			end
+			if (x==math.floor(xp) and y == math.floor (yp)) then
+				glColor(math.random(100,255)/255,math.random(100,255)/255,1,1)
+				gl.Rect(x * miniMapScale + miniMapOffsetX, y * miniMapScale + miniMapOffsetY, miniMapScale, miniMapScale)
+			end
+		end
+	end
+end
+
+
+function widget:KeyPress(key,mods,isRepeat,label,unicode)	
+	keys[key] = true
+end
+
+function widget:KeyRelease(key)	
+	keys[key] = false
+end
