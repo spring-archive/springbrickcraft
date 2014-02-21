@@ -109,7 +109,6 @@ function script.FireWeapon1()
 end
 
 function script.Killed(recentDamage, maxHealth)
-	Sleep(30)
 end
 
 function miningWork (cargo, addedCargo)

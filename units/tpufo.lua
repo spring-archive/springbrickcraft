@@ -1,5 +1,6 @@
 	unitDef = {
 	  unitname            = [[tpufo]],
+	  onoffable = true,
 	  name                = [[Flying Saucer]],
 	  description         = [[Floating free on a continuum frequency]],
 	  acceleration        = 0.8,

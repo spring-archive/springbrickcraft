@@ -33,6 +33,7 @@ end
 
  function gadget:Explosion(weaponID, px, py, pz, ownerID)
 	if (clusterWeapon [weaponID]) then
+		Spring.SpawnCEG("tpsmokeflare", px, py, pz)
 		env = Spring.UnitScript.GetScriptEnv(ownerID)
 		if (env) then Spring.UnitScript.CallAsUnit(ownerID, env.launchMissiles, px, py, pz) end
 --	else

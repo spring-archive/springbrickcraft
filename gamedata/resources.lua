@@ -31,6 +31,7 @@ local   resources = {
             muzzleside         = 'muzzleside.tga',
             muzzlefront         = 'muzzlefront.tga',
             largebeam         = 'largelaserfalloff.tga',
+			
 			cartooncloud = 'effects/cartooncloud.png',
 			cartooncloud2 = 'effects/cartooncloud2.png',
 			cartooncloud3 = 'effects/cartooncloud3.png',

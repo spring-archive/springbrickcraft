@@ -45,7 +45,10 @@ unitDef = {
   sightDistance       = 150, --800
   
     activateWhenBuilt             = true,
---   onoffable                     = true,
+   
+   onoffable                     = true,
+   makesMetal = 10,
+   
   radarDistance                 = 1500,
 
 

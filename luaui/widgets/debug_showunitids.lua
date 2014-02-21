@@ -1,6 +1,6 @@
     function widget:GetInfo()
             return {
-                            name    = "Show Unit ID",
+                            name    = "modding/debug Show Unit ID",
                             desc    = "Show all ID of all units",
                             author  = "zwzsg",
                             date    = "August 2010",

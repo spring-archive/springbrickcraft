@@ -1,8 +1,8 @@
 function blub ()
 	while (true) do
-		Sleep (2000)
+		Sleep (5000)
 		local x,y,z = Spring.GetUnitPosition (unitID)
-		Spring.SpawnCEG("tptestceg", x, y, z)
+		Spring.SpawnCEG("tpsmokeflare", x, y, z)
 	end
 end
 

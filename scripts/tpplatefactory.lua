@@ -68,7 +68,7 @@ function close ()
 	Move (bar4, x_axis, -slideD, slideS/3)
 	Move (bar5, x_axis, -slideD, slideS/2)
 	Move (bar6, x_axis, -slideD, slideS)
-	Spring.SetUnitCollisionVolumeData (unitID, 100,100,100, 0,-50,0, 3 ,0,0)
+	Spring.SetUnitCollisionVolumeData (unitID, 120,120,120, 0,-50,0, 3 ,0,0)
 end
 
 function open ()

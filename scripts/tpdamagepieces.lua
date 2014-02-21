@@ -9,7 +9,7 @@ local blownpieces = {}
 ------react to enemy fire-----
 function script.HitByWeapon (x, z, weaponDefID, damage)	
 	if weaponDefID == -5 then return 0 end	--no water damage
-	if weaponDefID == -1 then Spring.Echo ("dmg=5 now") damage=5 end	
+	--if weaponDefID == -1 then Spring.Echo ("dmg=5 now") damage=5 end	
 	--Spring.Echo ("getroffen!")
 	blowdamage = blowdamage + damage
 	if (blowdamage < blowstepdamage) then 

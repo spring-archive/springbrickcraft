@@ -48,28 +48,40 @@ stages[2]= {
 
 stages[3]= {
 	["unitNumbers"]={
-		["tpjeep"]=5,
-		["tptank"]=5,
-		["tpheavydude"]=10,		
+		["tpfactory2"]=1,
+		["tpgripper"]=1,
+		["tpdude"]=10,
 		},
 	skipMetal = math.huge,
 	}
 	
 stages[4]= {
 	["unitNumbers"]={
-		["tpgripper"]=2,
-		["tpsmallfac"]=3,
+		["tpjeep"]=3,		
+		["tpheavydude"]=10,		
 		},
-	skipMetal = math.huge,
+	skipMetal = 2000,
 	}
+	
 stages[5]= {
 	["unitNumbers"]={
-		["tpturretcenter"]=1,
-		["tpsmallfac"]=4,		
+		["tpgripper"]=2,
+		["tptank"]=5,
+		["tpsmallfac"]=3,
+		["tpfactory2"]=2,
 		},
 	skipMetal = math.huge,
 	}
 stages[6]= {
+	["unitNumbers"]={		
+		["tpturretcenter"]=1,
+		["tpgripper"]=3,
+		["tpsmallfac"]=4,
+		["tpheavydude"]=4,
+		},
+	skipMetal = math.huge,
+	}
+stages[7]= {
 	["unitNumbers"]={
 		["tpgunturret"]=1,
 		["tpdude"] = 15,
@@ -77,26 +89,26 @@ stages[6]= {
 	skipMetal = math.huge,
 	}
 	
-stages[7]= {
+stages[8]= {
 	["unitNumbers"]={
 		["tpwarpantenne"]=1,		
 		},
 	skipMetal = math.huge,
 	}
-stages[8]= {
+stages[9]= {
 	["unitNumbers"]={
 		["tpplatefactory"]=1,
 		},
 	skipMetal = math.huge,
 	}
-stages[9]= {
+stages[10]= {
 	["unitNumbers"]={
 		["tpheliport"]=1,
 		["tpheavytank"]=5,
 		},
 	skipMetal = math.huge,
 	}
-stages[10]= {
+stages[11]= {
 	["unitNumbers"]={
 		["tphubschrauber"]=1,
 		},

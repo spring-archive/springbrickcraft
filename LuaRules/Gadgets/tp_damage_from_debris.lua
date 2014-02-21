@@ -17,8 +17,7 @@ if (not gadgetHandler:IsSyncedCode()) then return end
 
 --    weaponDefID -1 --> debris collision
 function gadget:UnitPreDamaged (unitID, unitDefID, unitTeam, damage, paralyzer, weaponDefID, projectileID, attackerID, attackerDefID, attackerTeam) 
-	if weaponDefID == -1 then
-		--Spring.Echo (damage)
+	if weaponDefID == -1 then		
 		return 5
 	end
 	return damage

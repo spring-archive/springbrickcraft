@@ -41,7 +41,7 @@ function CountDown (unitID)
 	if countstarted==true then return Spring.Echo ("war schon true") end
 	countstarted = true	
 	--Spring.Echo ("gehts los, countstarted=")
-	local a = 999-500
+	local a = 500
 	local as = (2*math.pi)/10
 	local realcount = 0
 	Turn (drum3, z_axis, a*as)
@@ -67,7 +67,7 @@ function CountDown (unitID)
 			Spring.UnitScript.Explode (bla, SFX.SHATTER)
 			Spring.UnitScript.Explode (bla, SFX.SHATTER)
 			Spring.UnitScript.Explode (bla, SFX.SHATTER)
-			Spring.AddUnitDamage (ich, 9001)
+			Spring.AddUnitDamage (ich, 9000,0,ich, -1000)--1000=weaponID, default would be -1:same as debris
 		end
 		Spring.SetUnitTooltip (ich, "Time until explosion:" .. "\255\255\000\000 " .. 500-realcount .. "\b") --255 is NOT alpha but escape code for color \b=color reset
 	end	

@@ -127,20 +127,20 @@ unitDef = {
 	
 	      damage                  = {
 			Normal = 1, --75 war bevor es zum targetmarker wurde und ab da 1
-	      },
-		  CegTag				 = "tpshocktrail", --"tpmisslesmoke_cartoon_purple", --"tpmisslesmoke",
+	      },		  
 	      model                   = "projmissle.s3o", --"20empty.s3o", -- [[projmissle.s3o]], -- [[bantimechmissile.s3o]],
 	      --dance                   = 200,
 	      --wobble                  = 200,
-	      explosionGenerator      = [[custom:tpfiresplash]],
+	      explosionGenerator      = "custom:tpsmokeflare", -- [[custom:tpfiresplash]],
 	      flightTime              = 4,--4
 		  --burnBlow 				  = true, --war nicht
 	      interceptedByShieldType = 1,
 	      lineOfSight             = true,
 	      range                   = 1200,--800
 	      reloadtime              = 12.0, --1 --4.0 --8.0
-	      smokeTrail              = false,
-	      soundHit                = [[tp/woohoping.wav]],
+	      smokeTrail              = true,--false,
+	      --CegTag				 = "tpshocktrail", --"tpmisslesmoke_cartoon_purple", --"tpmisslesmoke",
+		  soundHit                = [[tp/woohoping.wav]],
 	      soundStart              = [[kanoba/Torpedo1Remake.ogg]],
 	      soundStartVolume        = 2,
 		  tolerance               = 8000,

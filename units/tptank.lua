@@ -118,7 +118,7 @@
 	      model                   = [[projmissle.s3o]], -- [[bantimechmissile.s3o]],
 	      dance                   = 2,
 	      wobble                  = 2,
-	      explosionGenerator      = [[custom:tpfiresplash]], --tpsmokecloud
+	      explosionGenerator      = "custom:tppurplemushroom", -- [[custom:tpfiresplash]], --tpsmokecloud
 	      flightTime              = 4,
 	      interceptedByShieldType = 1,
 	      lineOfSight             = true,
