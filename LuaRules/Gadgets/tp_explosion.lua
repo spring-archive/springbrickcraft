@@ -39,7 +39,7 @@ end
 --	else
 		--Spring.Echo ("some other weapon"..weaponID)
 	end
-	return true
+	return false
  end
  
  local projs = {}
