@@ -23,7 +23,7 @@ return {
         particlesizespread = 0,--"2i",--5
         particlespeed      = -2,--2
         particlespeedspread = 4,--0
-        size               = "i20", --0.2
+        --size               = "i20", --0.2
         sizegrowth         = "i1.5",--10
         sizemod            = 0.5,
         texture            = [[greyblob]],
@@ -49,7 +49,7 @@ return {
         particlesizespread = 4,
         particlespeed      = 5,
         particlespeedspread = 1,        
-        size               = 0.1,
+        --size               = 0.1,
         sizegrowth         = 0.02,
         sizemod            = 1,
         texture            = [[fuzzyring]],
@@ -75,7 +75,7 @@ return {
         particlesizespread = 4,
         particlespeed      = 10,
         particlespeedspread = 10,
-        size               = 0.05,
+        --size               = 0.05,
         sizegrowth         = 0.02,
         sizemod            = 1,
         texture            = [[cartooncloud]],

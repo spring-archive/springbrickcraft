@@ -12,7 +12,7 @@ return {
       alwaysVisible = 0,
 	  properties = {
         alwaysVisible = 0,
-        explosiongenerator = [[custom:blacksmoke]],
+        --explosiongenerator = [[custom:blacksmoke]],
 		airdrag            = 0.95,--0.9
         colormap           = [[0.2 0.2 0.2 1   0 0 0 0.9  0 0 0 0.2]],
         directional        = false,

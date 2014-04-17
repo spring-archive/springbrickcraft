@@ -13,7 +13,7 @@ return {
 	  alwaysVisible = 0,
 	  properties = {
         alwaysVisible = 0,
-        explosiongenerator = [[custom:tpmissleimpact]],
+        --explosiongenerator = [[custom:tpmissleimpact]],
 	  airdrag            = 0.75,
         colormap           = [[0.3 0.3 0.9 0.9    0.6 0.5 0.9 0.6    0.6 0.6 0.9 0.3     0.8 0.8 0.8 0.1]],
         directional        = false,

@@ -12,7 +12,7 @@ return {
       alwaysVisible = 0,
 	  properties = {
         alwaysVisible = 0,
-        explosiongenerator = [[custom:tpjet]],
+        --explosiongenerator = [[custom:tpjet]],
 	  airdrag            = 0.95,
         colormap           = [[1 0 0 0.5  1 0 0 1  1 1 1 1  1 1 1 0.5]],
         directional        = false,

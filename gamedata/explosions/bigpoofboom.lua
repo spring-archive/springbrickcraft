@@ -9,7 +9,7 @@ return {
       ground             = true,
       water              = true,
       properties = {
-	    delay              = "200i",
+	    --delay              = "200i",
 		airdrag            = 0.9,--0.9
         colormap           = [[1 1 1 0.75   1 1 1 0]],
         directional        = false,
@@ -38,7 +38,7 @@ return {
       ground             = true,
       water              = true,
       properties = {
-	    delay              = "200i",
+	    --delay              = "200i",
 		airdrag            = 0.95,--0.9
         colormap           = [[0.3 0.3 0.3 1  0.3 0.3 0.3 1  0.3 0.3 0.3 0]],
         directional        = false,

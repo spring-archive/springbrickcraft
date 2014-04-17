@@ -15,7 +15,7 @@ return {
 	  alwaysVisible = 0,
 	  properties = {
         alwaysVisible = 0,
-        explosiongenerator = [[custom:tpbulletimpact]],
+        --explosiongenerator = [[custom:tpbulletimpact]],
 	  airdrag            = 0.99,
         colormap           = [[0.3 0.3 0.3 0.9    0.6 0.5 0.5 0.6    0.8 0.7 0.7 0.3     0.8 0.8 0.8 0.1]],
         directional        = false,

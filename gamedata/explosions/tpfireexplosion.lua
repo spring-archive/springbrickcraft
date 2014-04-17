@@ -24,7 +24,7 @@ return {
         particlesizespread = 5,
         particlespeed      = 2,
         particlespeedspread = 1,
-        size               = 0.1, --0.2
+        --size               = 0.1, --0.2
         sizegrowth         = 0.4,
         sizemod            = 1,
         texture            = [[firecircle]],
@@ -54,7 +54,7 @@ return {
         particlesizespread = 3,
         particlespeed      = 4,
         particlespeedspread = 1,
-        size               = 0.1, --0.2
+        --size               = 0.1, --0.2
         sizegrowth         = 0.2,
         sizemod            = 1,
         texture            = [[greyblob]],
@@ -81,7 +81,7 @@ return {
         particlesizespread = 4,
         particlespeed      = 5,
         particlespeedspread = 1,        
-        size               = 0.1,
+        --size               = 0.1,
         sizegrowth         = 0.02,
         sizemod            = 1,
         texture            = [[fuzzyring]],
@@ -107,7 +107,7 @@ return {
         particlesizespread = 4,
         particlespeed      = 10,
         particlespeedspread = 10,
-        size               = 0.05,
+        --size               = 0.05,
         sizegrowth         = 0.02,
         sizemod            = 1,
         texture            = [[firecircle2]],
