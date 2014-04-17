@@ -1,20 +1,37 @@
     function widget:GetInfo()
             return {
-                            name    = "modding/debug Show Unit ID",
-                            desc    = "Show all ID of all units",
-                            author  = "zwzsg",
+                            name    = "modding/debug Show Unit ID and projectiles",
+                            desc    = "Show all ID of units, features, projectiles",
+                            author  = "zwzsg, knorke",
                             date    = "August 2010",
                             license = "Free",
                             layer   = 0,
-                            enabled = false,
+                            enabled = true,
                     }
     end
      
      
-    function widget:DrawScreenEffects()
-            for _,id in ipairs(Spring.GetAllUnits()) do
-                    local x,y=Spring.WorldToScreenCoords(Spring.GetUnitPosition(id))
-                    local FontSize=16
-                    gl.Text("ID:"..id,x,y,16,"od")
-            end
-    end
+function widget:DrawScreenEffects()
+		for _,id in ipairs(Spring.GetAllUnits()) do
+				local x,y=Spring.WorldToScreenCoords(Spring.GetUnitPosition(id))
+				local FontSize=16
+				gl.Text("U:"..id,x,y,16,"od")
+		end
+		
+		
+		for _,id in ipairs(Spring.GetVisibleProjectiles()) do
+				local x,y=Spring.WorldToScreenCoords(Spring.GetProjectilePosition(id) )
+				local FontSize=16
+				local a = Spring.GetProjectileHeading(id)
+				gl.Text("P:"..a,x,y,16,"od")
+		end
+
+		for _,id in ipairs(Spring.GetVisibleFeatures ()) do
+				local x,y=Spring.WorldToScreenCoords(Spring.GetFeaturePosition(id) )
+				local FontSize=16
+				gl.Text("F:"..id,x,y,16,"od")
+		end		
+		
+
+
+end
