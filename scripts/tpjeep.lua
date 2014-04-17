@@ -120,13 +120,17 @@ function script.QueryTransport(passengerID)
 	return weaponcenter
 end
 
-function script.EndTransport(each, passengerID)
+function script.EndTransport()
+end
+
+function script.TransportDrop ( passengerID, x, y, z )
+Spring.SetUnitNoSelect (passengerID, false)
 end
 
 function script.TransportPickup (passengerID)
 	--Spring.Echo ("hey passenger " .. passengerID)
 	Spring.UnitScript.AttachUnit (turret, passengerID)
-	
+Spring.SetUnitNoSelect (passengerID, true)
 
 --Spring.SetUnitNoDraw (passengerID,true)
 	--upgradewheels ()
