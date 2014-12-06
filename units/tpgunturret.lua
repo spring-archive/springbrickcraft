@@ -37,7 +37,7 @@ unitDef = {
 	smoothAnim          = true,
 	TEDClass            = [[FORT]],
 	turnRate            = 0,
-	orkerTime          = 0,
+	workerTime          = 0,
 	yardMap             = [[ooo ooo ooo]],
 	script              = [[tpgunturret.lua]],
 

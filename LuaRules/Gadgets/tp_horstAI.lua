@@ -312,7 +312,8 @@ function gadget:Initialize()
     -- Initialise AI for all teams that are set to use it
     for _,t in ipairs(Spring.GetTeamList()) do
         local _,_,_,ai,side = Spring.GetTeamInfo(t)
-        if ai and Spring.GetTeamLuaAI(t) == gadget:GetInfo().name then
+        Spring.Echo ("Spring.GetTeamLuaAI(t) -".. Spring.GetTeamLuaAI(t).."-")
+		if ai and Spring.GetTeamLuaAI(t) == gadget:GetInfo().name then
             --log(t, " assigned to "..gadget:GetInfo().name)
             local pos = {}
             local home_x,home_y,home_z = Spring.GetTeamStartPosition(t)

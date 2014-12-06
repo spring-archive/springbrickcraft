@@ -34,6 +34,5 @@ function gadget:UnitDestroyed(unitID, unitDefID, teamID, attackerID)
 		local i = math.random(1, #explosion [unitDefID])
 		local x,y,z=Spring.GetUnitPosition (unitID) --FIXME: ,true oder so, damit center of model		
 		Spring.SpawnCEG(explosion [unitDefID][i], x, y+10, z)
---		--Spring.PlaySoundFile ("bla", x,y,z, "battle")
 	end
 end

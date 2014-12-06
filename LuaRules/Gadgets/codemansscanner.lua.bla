@@ -1,0 +1,58 @@
+
+
+function gadget:GetInfo()
+    return {
+        name = "Satelite Scan",
+        desc = "Gives a satelite scan power to players",
+        author = "Code_Man",
+        date = "2014-1-3",
+        license = "Public domain",
+        layer = 1,
+        enabled = true
+    }
+end
+
+if (not gadgetHandler:IsSyncedCode()) then
+    return false
+end
+
+local timerTable = {}
+local scannersToSpawn = {} --stores scans that will be done next gameframe
+
+local function scan(teamID, x,z)
+    --if (timerTable[team] < Spring.GetGameSeconds()) then
+    --    return false
+    --end
+    local unit = Spring.CreateUnit("tptank", x, 300, z, "west",teamID)
+    --timerTable[team] = Spring.GetGameSeconds() + 60
+    --GG.Delay.DelayCall(Spring.DestroyUnit, {unit}, 1000)
+end
+
+
+
+function gadget:RecvLuaMsg(msg, playerID)
+    local name, active, spectator, teamID = Spring.GetPlayerInfo(playerID)
+    --if (not spectator) and active then
+	local x,z=Game.mapSizeX / 2 , Game.mapSizeX / 2	--real coordinates would be included in the msg string	
+	scannersToSpawn[#scannersToSpawn+1] = {ownerTeam=teamID, scanX=x, scanZ=z}
+end
+
+function gadget:GameStart()	--use Initialize(), will work on /luarules reload = easier testing
+    for _, team in ipairs(Spring.GetTeamList()) do
+        if (team ~= Spring.GetGaiaTeamID()) then
+            timerTable[team] = Spring.GetGameSeconds() + 60
+        end
+    end
+end
+
+function gadget:GameFrame(frame)
+if frame%60==0 then Spring.Echo ("alive"..frame) end --pro way to see if gadget has not crashed yet	
+	if (#scannersToSpawn>0) then	--are scans waiting to be done?
+		Spring.Echo ("spawn some scanners!")
+		for i,v in ipairs (scannersToSpawn) do	--loop over all scans that need to be done
+			Spring.Echo ("i="..i .. "ownerTeam="..scannersToSpawn[i].ownerTeam)
+			scan (scannersToSpawn[i].ownerTeam, scannersToSpawn[i].scanX, scannersToSpawn[i].scanX)
+		end
+		scannersToSpawn = {} --all scans done, clear table
+	end
+end

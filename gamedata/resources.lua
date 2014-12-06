@@ -58,6 +58,7 @@ local   resources = {
 			firesquare = 'effects/firesquare.png',
 			firecircle = 'effects/firecircle.png',
 			firecircle2 = 'effects/firecircle2.png',
+			null= 'null.tga',
 		 },
       }
    }

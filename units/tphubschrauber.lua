@@ -1,7 +1,7 @@
 	unitDef = {	
 	  unitname            = [[tphubschrauber]],
 	  name                = [[Mongoose]],
-	  description         = [[the mongoose flies]],
+	  description         = [[the mongoose flies and has special rockets]],
 	  acceleration        = 0.2,
 	  amphibious          = false,
 	  bankscale           = [[1]],
@@ -142,7 +142,7 @@
 	      areaOfEffect            = 200, --256
 	      avoidFeature            = false,
 	      avoidFriendly           = false,
-	      burst                   = 2,
+	      burst                   = 4,
 	      Projectiles			  = 2,
 		  burstrate               = 0.3, --0.2
 	      --commandfire             = true,
@@ -154,26 +154,26 @@
 	      },
 			CegTag				 = "tpshocktrail", --"tpmisslesmoke",
 			model                   =  [[projmedium.s3o]],
-	      Accuracy				  =	0, --2000
-		  dance                   = 30,
+	      Accuracy				  =	1000, --2000
+		  dance                   = 10,
 	      FixedLauncher			  = true,
-		  wobble                  = 1000,
+		  wobble                  = 100,
 	      explosionGenerator      =  [[custom:tpexplocloud]], -- [[custom:tpmissleimpact]],
-	      flightTime              = 2.5,	      
+	      flightTime              = 20,
 	      lineOfSight             = true,
-	      range                   = 350, --500
+	      range                   = 500, --500
 		  cylinderTargeting	  = 1,
-	      reloadtime              = 2.5, --1.5
+	      reloadtime              = 5, --1.5
 	      smokeTrail              = true,
 	      soundHit                = [[kanoba/SabotHitRemake.ogg]],
 	      soundStart              = [[kanoba/RockLit1Remake.ogg]],
 	      BurnBlow				  = 0,
 		  tolerance               = 16000,
 	      tracks                  = true,
-	      Turnrate				  = 12000, --16000: trifft quasi immer  10000:trifft etwas zu schlecht
+	      Turnrate				  = 32000, --TEST original: 12000, --16000: trifft quasi immer  10000:trifft etwas zu schlecht
 		  turret                  = false,
 	      weaponType              = [[MissileLauncher]],
-	      weaponVelocity          = 1500,
+	      weaponVelocity          = 750,
 	      startVelocity           = 100,
 	      weaponAcceleration      = 150,
 	    },	

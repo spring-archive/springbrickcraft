@@ -13,14 +13,17 @@ end
 if (not gadgetHandler:IsSyncedCode()) then return end
 
 local wiggleWeapon = {}
-wiggleWeapon[WeaponDefNames["tphubschrauber2_rockets"].id] = true
+wiggleWeapon[WeaponDefNames["tphubschrauber_rockets"].id] = true
 
 local redirectProjectiles = {}  -- [frame][projectileID] = table with .targetType .targetX .targetY .targetZ .targetID
 
 function gadget:Initialize()
-	Script.SetWatchWeapon (WeaponDefNames["tphubschrauber2_rockets"].id, true)
+	Script.SetWatchWeapon (WeaponDefNames["tphubschrauber_rockets"].id, true)
 end
 
+local function distance2D (x1,y1,x2,y2) 
+	return math.sqrt((x2 - x1) ^ 2 + (y2 - y1) ^ 2) 
+end
  
  function gadget:GameFrame (frame)
 	--if frame%60==0 then Spring.Echo ("projectile_test.lua"..frame) end
@@ -29,7 +32,7 @@ end
 		for projectileID,_ in pairs (redirectProjectiles[frame]) do
 			if (Spring.GetProjectileType (projectileID)) then
 				setTargetTable (projectileID, redirectProjectiles[frame][projectileID])
-				Spring.SetProjectileCEG (projectileID, "custom:tpmuzzleflash_jeep")				
+				--Spring.SetProjectileCEG (projectileID, "custom:tpmuzzleflash_jeep")				
 			end
 		end
 	redirectProjectiles[frame] = nil
@@ -45,7 +48,7 @@ end
 		local tx,ty,tz = getProjectileTargetXYZ (proID)
 		local x,y,z = Spring.GetUnitPosition (proOwnerID)
 		
-		Spring.SetProjectileCEG (proID, "custom:tpfiretrail")
+		
 		--local randomSpray = makeTargetTable (x+math.random(-200,200), y+100, z+math.random(-200,200))
 		--addProjectileRedirect (proID, randomSpray, 30)
 		--addProjectileRedirect (proID, makeTargetTable(tx,Spring.GetGroundHeight (tx,tz)+100,tz), 10)
@@ -59,11 +62,18 @@ end
 		--addProjectileRedirect (proID, makeTargetTable(tx+math.random(-500,500),ty+2000,tz+math.random(-500,500)), 50)		
 		--addProjectileRedirect (proID, originalTarget, 80)
 		
-		addProjectileRedirect (proID, makeTargetTable(x+500,y,z), 30)
-		addProjectileRedirect (proID, makeTargetTable(x,y,z+500), 60)
-		addProjectileRedirect (proID, makeTargetTable(x-500,y+500,z),90 )
-		addProjectileRedirect (proID, makeTargetTable(x+500,y,z), 120)
-		addProjectileRedirect (proID, originalTarget, 150)
+		--addProjectileRedirect (proID, makeTargetTable(x+500,y,z), 30)
+		--addProjectileRedirect (proID, makeTargetTable(x,y,z+500), 60)
+		--addProjectileRedirect (proID, makeTargetTable(x-500,y+500,z),90 )
+		--addProjectileRedirect (proID, makeTargetTable(x+500,y,z), 120)
+		--addProjectileRedirect (proID, originalTarget, 150)
+		
+		
+		if (distance2D (tx,tz, x,z) > 300) then
+			addProjectileRedirect (proID, makeTargetTable(tx,Spring.GetGroundHeight (tx,tz)+500,tz), 5)
+			addProjectileRedirect (proID, originalTarget, 30)
+			Spring.SetProjectileCEG (proID, "custom:tpfiretrail")			
+		end
 		return true
 	end
 end

@@ -15,21 +15,21 @@ function widget:DrawScreenEffects()
 		for _,id in ipairs(Spring.GetAllUnits()) do
 				local x,y=Spring.WorldToScreenCoords(Spring.GetUnitPosition(id))
 				local FontSize=16
-				gl.Text("U:"..id,x,y,16,"od")
+				gl.Text("unitID:"..id,x,y,16,"od")
 		end
 		
 		
 		for _,id in ipairs(Spring.GetVisibleProjectiles()) do
 				local x,y=Spring.WorldToScreenCoords(Spring.GetProjectilePosition(id) )
 				local FontSize=16
-				local a = Spring.GetProjectileHeading(id)
-				gl.Text("P:"..a,x,y,16,"od")
+				--local a = Spring.GetProjectileHeading(id)
+				gl.Text("projectileID:"..id,x,y,16,"od")
 		end
 
 		for _,id in ipairs(Spring.GetVisibleFeatures ()) do
 				local x,y=Spring.WorldToScreenCoords(Spring.GetFeaturePosition(id) )
 				local FontSize=16
-				gl.Text("F:"..id,x,y,16,"od")
+				gl.Text("featureID:"..id,x,y,16,"od")
 		end		
 		
 

@@ -29,6 +29,15 @@ function script.Create()
 	Spin (rotor, y_axis, math.rad (90))
 	Spin (ant1, y_axis, math.rad (270))
 	Spin (ant2, y_axis, -math.rad (270))	
+	
+	--Spring.SetUnitRotation (unitID, 0,math.pi,0)
+	
+	--Spring.SetUnitDirection (unitID, 0,1,0)
+	
+	--Spring.SetUnitDirection (unitID, 0,0,0)
+	--Spring.MoveCtrl.Enable (unitID)
+	--Spring.MoveCtrl.SetHeading (unitID, 65536)
+	--Spring.MoveCtrl.Disable (unitID)
 end
 
 local function RestoreAfterDelay(unitID)
@@ -40,7 +49,15 @@ function script.QueryWeapon1() return flare end
 
 function script.AimFromWeapon1() return flare end
 
+local pickNewTarget = false --somewhatish working attempt at http://springrts.com/mantis/view.php?id=4491
 function script.AimWeapon1( heading, pitch )
+--Spring.Echo ("AimWeapon" .. Spring.GetGameFrame())
+	Spring.Echo ("pitch="..math.deg(pitch))
+	if (math.deg(pitch) > 10) then 
+		pickNewTarget = true 
+		UnitScript.SetUnitValue(COB.CHANGE_TARGET, 1)
+		return false
+	end
 	Signal(SIG_AIM)
 	SetSignalMask(SIG_AIM)
 	Turn(turret, y_axis, heading, math.rad(180))
@@ -50,6 +67,19 @@ function script.AimWeapon1( heading, pitch )
 	WaitForTurn(barrel, x_axis)
 	return true
 end
+
+--[[
+function script.BlockShot1 ( targetUnitID, userTarget )
+	--Spring.Echo ("BlockShot" .. Spring.GetGameFrame() )
+	if pickNewTarget then
+		pickNewTarget = false
+		Spring.Echo ("blocked")		
+		return true
+	else
+		return false
+	end
+end
+--]]
 
 function script.FireWeapon1()
 --	EmitSfx(flare, orc_machinegun_flash)

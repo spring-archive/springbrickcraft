@@ -5,7 +5,8 @@ name = "Paddler",
 Description = "",
 objectName = "paddler.s3o",
 script = "tppaddler.lua",
-
+buildCostMetal = 750,
+buildCostEnergy = 0, 
 --Health
 maxDamage = 1000,
 idleAutoHeal = 0,

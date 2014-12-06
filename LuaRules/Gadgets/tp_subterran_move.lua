@@ -11,7 +11,7 @@ function gadget:GetInfo()
                 date                    = "Sep 2012",
                 license  				= "later horses dont be mean.",
                 layer            		= 0,
-                enabled  = true,
+                enabled  = false,
         }
 end
 

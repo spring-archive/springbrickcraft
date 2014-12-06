@@ -23,6 +23,7 @@ local wat =
 "#20",
 "%20:0",
 "$info",
+"$info_losmap",
 }
 
 function widget:DrawScreen()

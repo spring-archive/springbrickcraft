@@ -10,7 +10,6 @@ function gadget:GetInfo()
                 enabled  = true,
         }
 end
-
 --when this   kills something, creates this:
 --        v                              v
 --zomba[attacker]             =       result
@@ -24,6 +23,9 @@ end
 -- anything kills this creates this
 --      v          v            v
 --zomba[ZOMBO][victim] =     result
+
+if (not gadgetHandler:IsSyncedCode()) then return end
+
 
 local ZOMBO = "anything at all"
 

@@ -7,7 +7,7 @@ function widget:GetInfo()
    date      = "2011",
    license   = "Public Domain",
    layer     = 0,
-   enabled   = false, --enabled by default
+   enabled   = true, --enabled by default
    handler   = true, --access to handler
    }
 end
@@ -17,8 +17,9 @@ function widget:GameFrame (f)
 	if (cmd_id and cmd_id > 0) then return end --  < 0 means building something, >0 is move,patrol etc  cmd_id=-unitdefif (???)
 	if (cmd_name) then
 		local x,z = getCursorWorldCoord()
-		Spring.Echo ("trying to place a " .. cmd_name .." at " .. math.floor(x) .. ":" .. math.floor(z))
+		Spring.Echo ("trying to place a " .. cmd_name .." at " .. math.floor(x) .. ":" .. math.floor(z))		
 	end	
+	Spring.Echo ("frame:\n",f)
 end
 
 function getCursorWorldCoord ()

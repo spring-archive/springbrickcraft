@@ -73,7 +73,6 @@ end
 
 
 function script.Create()
-	Spring.Echo ("taaaaaaaank")
 	--StartThread(blockBuildingAnimation,50)
 	getTogether (300,200)
 	--StartThread (healthRegainedThread)

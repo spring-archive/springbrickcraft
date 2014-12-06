@@ -1,0 +1,49 @@
+function gadget:GetInfo()
+        return {
+                name                    = "scanner",
+                desc                    = "hab ihr nen scanner am laufen",
+                author          		= "knorke",
+                date                    = "Feb 2013",
+                license  				= "later horses dont be mean",
+                layer            		= 0,
+                enabled  = true,
+        }
+end
+
+
+if (not gadgetHandler:IsSyncedCode()) then return end
+
+local SCANNERS = {
+  [UnitDefNames["unit name of unit that can scan"].id] = true, --YOUR UNIT NAME HERE
+}
+
+local CMD_SCAN = 34581 --unique ID number for scan command
+
+local locateCmd = {
+      id      = CMD_SCAN,
+      name    = "Scan",
+      action  = "Scan",
+      type    = CMDTYPE.ICON_MAP,
+      tooltip = "Click somewhere and it will scan there",
+}
+
+function gadget:UnitCreated(unitID, unitDefID, unitTeam, builderID)
+   if SCANNERS[unitDefID] then --should the new unit have a scan button?
+      Spring.InsertUnitCmdDesc(unitID, locateCmd) --appearently yes
+   end
+end
+
+function gadget:AllowCommand(unitID, unitDefID, unitTeam, cmdID, cmdParams, cmdOptions, cmdTag)   
+   if cmdID == CMD_SCAN then --is our beloved custom scan command?
+      if SCANNERS[unitDefID] then   --is this a unit that should care about our custom command?
+         local x = cmdParams[1]
+         local y = cmdParams[2]
+         local z = cmdParams[3]
+		 --here you would have stuff like "does the scanner have enough energy", "is target in range" etc
+		 --if not to above conditions, then return here
+         --if yes then return the invisible fake unit that gives LOS:         
+		 Spring.CreateUnit ("unit name of unit that gives LOS", x,y,z, "west", unitTeam) --YOUR UNIT NAME HERE
+      end
+   end
+   return true --return false can be used to block commands but dont want to block anything, so always return true
+end

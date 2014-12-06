@@ -30,6 +30,8 @@ local weaponDef = {
 		  CegTag				 = "tpfiretrail",
 		  alwaysVisible			= true,
 		  explosionGenerator      = [[custom:tpfireexplosion]],
+		  soundHit = {file="kanoba/SabotHitRemake.ogg",volume=5.0},
+		  soundHitWet = {file="sounds/tp/waterplop.wav",volume=5.0},
 		  }
 		
 return lowerkeys({[weaponName] = weaponDef})

@@ -33,7 +33,7 @@ local SetGroundMoveTypeData = Spring.MoveCtrl.SetGroundMoveTypeData
 local SetGunshipMoveTypeData = Spring.MoveCtrl.SetGunshipMoveTypeData
 
 local mineLayerNames = {
---  [UnitDefNames["tppioneer"].id] = true,
+  [UnitDefNames["tppioneer"].id] = true,
 }
 
 local mineLayCmd = {

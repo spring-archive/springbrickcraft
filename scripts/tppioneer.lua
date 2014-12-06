@@ -69,7 +69,7 @@ function script.setSFXoccupy (curTerrainType) --4=land, 2=water
 		Signal(SIGwaterBubble)
 		Spring.SetUnitLeaveTracks (unitID, true)
 	end
-	Spring.Echo (curTerrainType)
+--	Spring.Echo (curTerrainType)
 end
 
 function waterBubble()
@@ -158,7 +158,7 @@ function script.StartBuilding(heading, pitch)
 	Turn (radar, y_axis, heading, math.rad (360))
 	WaitForTurn (radar, y_axis)
 	StartThread (buildAnimation)
-	Turn (base, x_axis, 0, math.rad(180))	
+	Turn (base, x_axis, 0, math.rad(180))
 end
 
 function buildAnimation ()

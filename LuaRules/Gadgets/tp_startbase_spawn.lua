@@ -67,16 +67,17 @@ function gadget:Initialize()
 		Spring.Echo ("NO SUPPORT FOR THIS MATCH SETUP:" .. gm)
 		Spring.SendLuaUIMsg (luamsgpre .. "NO SUPPORT FOR THIS MATCH SETUP:" .. gm)
 		gm = "random"
-	end
-	
-	if gm == "random" then
-		startpos[gm] = shuffleStartPositions (startpos[gm])
+		--FIXME: if playernumbers is an amount for which no startpos config exists, then do not crash
+	else	
+		if gm == "random" then
+			startpos[gm] = shuffleStartPositions (startpos[gm])
+		end
 	end
 	
 	local allyTeamList = Spring.GetAllyTeamList()
 	for _,allyTeamID in ipairs (allyTeamList) do
 		for _,teamID in ipairs(Spring.GetTeamList(allyTeamID)) do
-			if teamID~=gaiaTeamID then -- don't spawn a start unit for the Gaia team			
+			if teamID~=gaiaTeamID then -- don't spawn a start unit for the Gaia team
 				local teamNum,leader,isDead,isAiTeam,side,allyTeam = Spring.GetTeamInfo(teamID)					
 				local x,z = startpos[gm][i].x, startpos[gm][i].z
 				spawn_player (x, z, teamID)
@@ -106,6 +107,7 @@ end
 
 
 function shuffleStartPositions (startPos)
+	if not startPos then return startPos end
 	for x=1,50 do
 		local i = math.random (1, #startPos)
 		local u = (i % #startPos) + 1

@@ -47,6 +47,7 @@
 	  maxVelocity         = 3,
 	  pushResistant 	  = true, --so they do not push each other into range of stuff
       maxWaterDepth       = 22,
+	  floater=true,
 	  minCloakDistance    = 75,
 	  movementClass       = [[Vehicle4x4]],
 	  crushStrength 	  = 100,
@@ -125,14 +126,18 @@
 	      range                   = 500, --war 450 habs runter gemacht damit turrets den panzer outrangen --400 müssen sie das? --600 --400
 	      reloadtime              = 1.5, --2 --1
 	      smokeTrail              = true,
-	      soundHit                = [[argh/Argh_LargeExplosion]],
-	      soundStart              = [[kanoba/Canlite3Remake.ogg]],
+	      soundHitDry                 = [[argh/Argh_LargeExplosion]],
+		  --soundHitWet = {file="tp/waterplop.wav"},
+	      soundHitWet = [[tp/zauber]],
+		  soundHitWetVolume = 100,
+		  --soundStart              = [[kanoba/Canlite3Remake.ogg]], --works
 	      tolerance               = 8000,
 	      tracks                  = true,
 	      Turnrate				  = 16000,
 		  turret                  = true,
 	      weaponType              = [[MissileLauncher]],
-	      weaponVelocity          = 1000,
+	      stages = 500,-- test
+		  weaponVelocity          = 1000,
 	      startVelocity           = 1000,
 	      weaponAcceleration      = 100,
 		  TrajectoryHeight		  = 0.65,	--0.5 -> increased to make shoting over walls easier

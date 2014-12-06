@@ -1,3 +1,7 @@
+Wreck-features für alle einheiten zu machen suckt.
+Stattdessen ein feature, und grössere einheiten spawnen mehrere davon.
+
+
 einheit die unter der erde gräbt und man sieht oben nur sowas wie die rückenflosse beim hai
 
 groundscars gibts scheinbar nur für sachen mit default damage

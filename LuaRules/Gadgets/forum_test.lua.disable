@@ -1,0 +1,39 @@
+function gadget:GetInfo()
+   return {
+      name = "forumtest gadget",
+      desc = "Aggiunge unità all'inizio del gioco.",
+      author = "daryl - www.totalannihilation.it", -- thx to http://springrts.com community, knorke, smoth, Beherith, jK .
+      date = "September 19st, 2010",
+      license = "GPL, v.2, 2008",
+      layer = 0,
+      enabled = true,
+   }
+end
+
+if (not gadgetHandler:IsSyncedCode()) then
+  return false
+end
+
+function gadget:Initialize()
+Spring.Echo ("forumtest Initialize")
+
+
+    local i = 0
+    local j = 0
+    local feature
+    while (i < Game.mapSizeX / 16) do
+        j = 0
+        while (j < Game.mapSizeZ / 16) do
+            if (Spring.GetMetalAmount (i, j) > 0) and (Spring.GetGroundHeight (i * 16, j * 16) > 0)  then
+                Spring.Echo (j,i)
+				local features = Spring.GetFeaturesInRectangle (i * 16, j * 16, i * 16 + 15, j * 16 + 15)				
+				Spring.MarkerAddPoint (i*16,500, j*16, #features)
+            end
+            j = j + 1
+        end
+        i = i + 1
+    end
+
+
+end
+
